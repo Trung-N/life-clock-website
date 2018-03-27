@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Lobster|Patua+One');
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.bgimg {
+  background-image: url('skull.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: : cover;
+  position: relative;
+  font-size: 25px;
+}
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  font-family: 'Lobster', cursive;
+  font-size: 16px;
+}
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Faster One', cursive;
+}
+hr {
+margin: auto;
+width: 40%;
+}
+#timer{
+  font-family: 'Patua One', cursive;
+  font-size: 35px;
+}
