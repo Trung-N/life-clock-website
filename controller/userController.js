@@ -10,10 +10,6 @@ module.exports.sayBye = function(req,res){
     res.send('Goodbye');
 };
 
-module.exports.sayHello = function(req,res){
-    res.send('Hello World');
-};
-
 module.exports.AllUsers = function(req,res){
     res.send(database);
 };
