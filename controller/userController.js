@@ -2,8 +2,8 @@ const database = require('../models/db.js');
 const express = require('express');
 const faker = require('faker');
 
-module.exports.sayHello = function(req,res){
-    res.send('Hello World');
+module.exports.comingsoon = function(req,res){
+    res.render('coming');
 };
 
 module.exports.sayBye = function(req,res){
