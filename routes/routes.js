@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controller/userController.js');
 
-router.get('/',controller.sayHello);
+router.get('/',controller.comingsoon);
 
 router.get('/bye',controller.sayBye);
 
