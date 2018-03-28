@@ -26,6 +26,11 @@ body, html {
   text-align: center;
   font-family: 'Faster One', cursive;
 }
+.middlebody {
+  font-family: 'Lobster', cursive;
+  font-size: 18px;
+}
+
 hr {
 margin: auto;
 width: 40%;
