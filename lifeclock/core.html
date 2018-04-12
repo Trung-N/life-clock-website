@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en-AU">
+   
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Lifeclock </title>
+        <link rel="stylesheet" href="./styles/core.css"> 
+        <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
+    </head>
+    
+    <body>
+        
+        <div class="navbar" id="navbar">
+            <a href="./index.html">Home</a>
+            <a href="./index.html">Social</a>
+            <div class="dropdown-content">
+                <a class="dropdown" href="./index.html">Articles</a>
+
+                <a href="./workouts.html">Workouts</a>
+                <a href="./diets.html">Diets</a>
+                <a href="./health.html">Health</a>
+            </div>
+            <a href="./index.html">Timer Changes</a>
+            <a href="./index.html">Goals</a>
+            <a class="right" href="./index.html">Logout</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        
+        <script>
+            function myFunction() {
+                var x = document.getElementById("navbar");
+                if (x.className === "navbar") {
+                    x.className += "ex";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+</script>
+        
+        
+    </body>
+
+    
+</html>
