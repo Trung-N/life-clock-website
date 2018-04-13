@@ -13,32 +13,22 @@
     
     <body>
         
-        <div class="navbar" id="navbar">
-            <a href="./index.html">Home</a>
-            <a href="./index.html">Social</a>
-            <div class="dropdown-content">
-                <a class="dropdown" href="./index.html">Articles</a>
-
-                <a href="./workouts.html">Workouts</a>
-                <a href="./diets.html">Diets</a>
-                <a href="./health.html">Health</a>
-            </div>
-            <a href="./index.html">Timer Changes</a>
-            <a href="./index.html">Goals</a>
-            <a class="right" href="./index.html">Logout</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
-        
-        <script>
-            function myFunction() {
-                var x = document.getElementById("navbar");
-                if (x.className === "navbar") {
-                    x.className += "ex";
-                } else {
-                    x.className = "topnav";
-                }
-            }
-</script>
+        <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./social.html">Social</a></li>
+            <li class="dropdown">
+                <a href="./Articles" class="dropbtn">Articles</a>
+                <div class="dropdown-content">
+                    <a href="./workouts.html">Workouts</a>
+                    <a href="./diets.html">Diets</a>
+                    <a href="./health.html">Health</a>
+                </div>
+            </li>
+            <li><a href="#">Timer changes</a></li>
+            <li><a href="#">Goals</a></li>
+            <li class="right" ><a href="#">Logout</a></li>
+        </ul>
         
         
     </body>
