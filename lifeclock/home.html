@@ -7,29 +7,30 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> Lifeclock </title>
-        <link rel="stylesheet" href="./styles/core.css"> 
+        <link rel="stylesheet" href="./styles/navbar.css"> 
+        <script type="text/javascript" src="./js/navbar.js"></script>
         <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
     </head>
     
     <body>
-        
+
         <!-- Navigation Bar -->
         <ul class="navbar" id="navbar">
-            <li><a href="./index.html">Home</a></li>
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li class="active" ><a href="./main.html">Lifeclock</a></li>
             <li><a href="./social.html">Social</a></li>
             <li class="dropdown">
-                <a href="./Articles" class="dropbtn">Articles</a>
-                <div class="dropdown-content">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
                     <a href="./workouts.html">Workouts</a>
                     <a href="./diets.html">Diets</a>
                     <a href="./health.html">Health</a>
                 </div>
             </li>
-            <li><a href="#">Timer changes</a></li>
-            <li><a href="#">Goals</a></li>
-            <li class="right" ><a href="#">Logout</a></li>
+            <li ><a href="#">Timer changes</a></li>
+            <li><a href="./goals.html">Goals</a></li>
+            <li class="right" ><a href="./login.html">Logout</a></li>
         </ul>
-        
         
     </body>
 

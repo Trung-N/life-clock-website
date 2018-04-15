@@ -16,10 +16,6 @@ h1 {
     font-size: 48pt;
 }
 
-
-
-
-
 .logo{
     width:40%;
     text-align: center;
@@ -56,4 +52,23 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     vertical-align: top;
+}
+
+@media screen and (max-width: 660px){
+	
+	h1 {
+    	font-size: 36pt;
+	}
+
+	.logo{
+    	width:70%;	
+	}
+
+	.input{
+    	width: 80%;
+	}
+
+	.button {
+    	width: 80%;
+	}
 }
