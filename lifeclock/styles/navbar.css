@@ -1,0 +1,127 @@
+body{
+    background-color:lightblue;
+    margin: 0;
+}
+
+html{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+/* navbar properties */
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /*Navbar colour*/
+}
+
+.navbar a{
+    color: white;
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+.navbar li{
+    float: left;
+}
+
+.navbar .right{
+    float: right;
+}
+
+.navbar .active{
+    background-color: darkblue; /*colour for page you are on */
+}
+
+/* Dropdown menu in navbar */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.navbar button{
+    display: inline-block;
+    text-align: left;
+    padding: 14px 16px;
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* navbar behaviour */
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: darkgrey; /*hover colour*/
+}
+
+/* For Sub lists */
+.expand{
+    display: block;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+@media screen and (max-width: 660px){
+    
+    .navbar li{
+        text-align: left;
+        float: none;
+    }
+    
+    .navbar li:not(.active) {
+        display: none;
+    }
+    
+    .navbar li.a.icon{
+        float: right;
+        display: block;
+    }
+    
+    .navbar .right{
+        float: none;
+    }
+    
+    .dropdown-content {
+        position: relative;      
+    }
+    
+    .dropdown-content a {
+        text-align: center;
+    }
+
+    .navbar .icon{
+        float:right;
+        display:block;
+    }
+    
+    .navbar.responsive {
+        position: relative;
+    }
+    
+    .navbar.responsive li {
+        float: none;
+        display: block;
+        text-align: left;
+  }
+    
+}
