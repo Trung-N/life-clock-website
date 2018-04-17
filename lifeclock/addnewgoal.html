@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en-AU">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Lifeclock </title>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link rel="stylesheet" href="./styles/addnewgoals.css">
+        <script type="text/javascript" src="./js/navbar.js"></script>
+        <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li class="active" ><a href="./home.html">Lifeclock</a></li>
+            <li><a href="./social.html">Social</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="./workouts.html">Workouts</a>
+                    <a href="./diets.html">Diets</a>
+                    <a href="./health.html">Health</a>
+                </div>
+            </li>
+            <li ><a href="#">Timer changes</a></li>
+            <li><a href="./goals.html">Goals</a></li>
+            <li class="right" ><a href="./login.html">Logout</a></li>
+        </ul>
+
+        <h1>Add New Goal</h1>
+
+  <div class="details">
+    Enter your details into the fields.
+  </div>
+  <form action="./home.html" method="post" class="form">
+    <p>Name of Goal</p>
+    <input type="text" name="Name" class="input" required>
+    <p>Goal Type</p>
+    <select>
+      <option disabled selected value>Goal Type</option>
+      <option value="0">Steps</option>
+      <option value="1">Sleep</option>
+      <option value="2">Calories</option>
+      <option value="3">Days without smoking</option>
+      <option value="4">Days without drinking</option>
+    </select>
+     <p>Value</p>
+    <input type="text" name="Name" class="input" required>
+    <select>
+      <option disabled selected value>Units</option>
+      <option value="0">Days</option>
+      <option value="1">Hours</option>
+      <option value="2">Calories</option>
+      <option value="3">Steps</option>
+    </select>
+    <br>
+    <button type="submit" class="button" onclick ="location.href='./goals.html';">DONE</button>
+  </form>
+  <br>        
+  </body>
+</html>

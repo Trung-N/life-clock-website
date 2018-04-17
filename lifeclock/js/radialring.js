@@ -22,21 +22,23 @@
     }
   });
 
-  var gpa = new RadialProgressChart('.gpa', {
+  var steps = new RadialProgressChart('.steps', {
     diameter: 200,
-    max: 4,
-    round: false,
+    max: 10000,
+    round: true,
     series: [
       {
-        value: 3.75,
-        color: ['red', '#7CFC00']
+        value: 8000,
+        color: ['green', '#7CFC00']
       }
     ],
-    center: function (d) {
-      return d.toFixed(2) + ' GPA'
+    center: {
+      content: [function (value) {
+        return value
+      }, ' Steps'],
+      y: 25
     }
   });
-
 
   function getRandom(min, max) {
     return Math.random() * (max - min) + min;

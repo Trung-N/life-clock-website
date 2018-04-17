@@ -14,7 +14,7 @@
         <!-- Navigation Bar -->
         <ul class="navbar" id="navbar">
             <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
-            <li class="active" ><a href="./home.html">Lifeclock</a></li>
+            <li><a href="./home.html">Lifeclock</a></li>
             <li><a href="./social.html">Social</a></li>
             <li class="dropdown">
                 <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
@@ -25,15 +25,19 @@
                 </div>
             </li>
             <li ><a href="#">Timer changes</a></li>
-            <li><a href="./goals.html">Goals</a></li>
+            <li class="active"><a href="./goals.html">Goals</a></li>
             <li class="right" ><a href="./login.html">Logout</a></li>
         </ul>
 
 
         <div class="container">
+            <div class="steps"></div>
             <div class="calories"></div>
         </div>
-
+        
+        <button class="button" onclick="location.href='./addnewgoal.html';">Add New Goal</button>
+        
+         
         <script src="./js/radialring.js"></script>
 
 </body>
