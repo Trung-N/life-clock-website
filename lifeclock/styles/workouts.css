@@ -3,9 +3,9 @@
 body{
     background-image: url('../images/6272.jpg');
     background-color: white;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position: 80% 35%;
+    background-size: cover; 
     margin: 0;
 }
 
