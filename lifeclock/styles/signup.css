@@ -3,9 +3,9 @@
 body{
     background-image: url('../images/plains.png');
     background-color: rgb(95,204,239);
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover; 
     margin: 0;
     height: 100%;
     width: 100%;
