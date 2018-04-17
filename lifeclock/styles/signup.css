@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
 body{
-    background-color:lightblue;
+    background-image: url('../images/plains.png');
+    background-color: rgb(95,204,239);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
     margin: 0;
     height: 100%;
     width: 100%;
 
 }
 html{
-    font-family: "Lucida Console", Monaco, monospace;
+    font-family: 'Bungee Inline', cursive;
     font-size: 16px;
     text-align: center;
     color: white;
@@ -63,6 +69,7 @@ select{
     margin: 4px 0;
     text-align: center;
     display: inline-block;
+    font-family: 'Bungee Inline', cursive;
     font-size: 16px;
     cursor: pointer;
     vertical-align: top;

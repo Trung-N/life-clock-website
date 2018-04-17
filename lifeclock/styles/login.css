@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Sigmar+One|Bungee+Inline');
+
 body{
-    background-color:lightblue;
+    background-image: url('../images/mountains(dawn).png');
+    background-color: rgb(144,195,149);
+    background-repeat: no-repeat;
+    background-size: auto;
     margin: 0;
     height: 100%;
     width: 100%;
@@ -13,6 +18,7 @@ html{
 }
 
 h1 {
+    font-family: 'Sigmar One', cursive;
     font-size: 48pt;
 }
 
@@ -49,19 +55,20 @@ h1 {
     margin: 4px 0;
     text-align: center;
     display: inline-block;
+    font-family: 'Bungee Inline', cursive;
     font-size: 16px;
     cursor: pointer;
     vertical-align: top;
 }
 
 @media screen and (max-width: 660px){
-	
+
 	h1 {
     	font-size: 36pt;
 	}
 
 	.logo{
-    	width:70%;	
+    	width:70%;
 	}
 
 	.input{

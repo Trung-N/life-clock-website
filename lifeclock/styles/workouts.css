@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Concert+One|Permanent+Marker');
+
 body{
-    background-color:lightblue;
+    background-image: url('../images/6272.jpg');
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 80% 35%;
     margin: 0;
 }
 
@@ -7,7 +13,7 @@ html{
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 16px;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 /* navbar properties */
@@ -17,6 +23,7 @@ html{
     padding: 0;
     overflow: hidden;
     background-color: #333; /*Navbar colour*/
+    font-family: 'Bowlby One SC', cursive;
 }
 
 .navbar a{
@@ -128,19 +135,19 @@ li a:hover, .dropdown:hover .dropbtn {
 
 .articleone {
   text-align: left;
-  padding: 20px;
+  padding-left: 60px;
   overflow: auto;
 }
 
 .articletwo {
   text-align: left;
-  padding: 20px;
+  padding-left: 60px;
   overflow: auto;
 }
 
 .articlethree {
   text-align: left;
-  padding: 20px;
+  padding-left: 60px;
   overflow: auto;
 }
 
@@ -150,4 +157,18 @@ img{
     width: auto;
     max-width: 300px;
     max-height: 300px;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 60px;
+}
+
+div{
+  font-family: 'Concert One', cursive;
+  font-size: 20px;
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
 body{
     background-color:lightblue;
     margin: 0;
@@ -6,10 +8,10 @@ body{
 
 }
 html{
-    font-family: "Lucida Console", Monaco, monospace;
+    font-family: 'Bungee Inline', cursive;
     font-size: 16px;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 h1 {
@@ -47,19 +49,20 @@ h1 {
     margin: 4px 0;
     text-align: center;
     display: inline-block;
+    font-family: 'Bungee Inline', cursive;
     font-size: 16px;
     cursor: pointer;
     vertical-align: top;
 }
 
 @media screen and (max-width: 660px){
-	
+
 	h1 {
     	font-size: 36pt;
 	}
 
 	.logo{
-    	width:70%;	
+    	width:70%;
 	}
 
 	.input{
