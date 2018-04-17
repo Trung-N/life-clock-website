@@ -5,28 +5,28 @@ module.exports.login = function(req,res){
 };
 
 module.exports.home = function(req,res){
-    res.send('home');
+    res.render('home');
 };
 
 module.exports.addnewgoal = function(req,res){
-    res.send('addnewgoal');
+    res.render('addnewgoal');
 };
 
 module.exports.diets = function(req,res){
-    res.send('diets');
+    res.render('diets');
 };
 module.exports.goals = function(req,res){
-    res.send('goals');
+    res.render('goals');
 };
 module.exports.health = function(req,res){
-    res.send('health');
+    res.render('health');
 };
 module.exports.signup = function(req,res){
-    res.send('signup');
+    res.render('signup');
 };
 module.exports.social = function(req,res){
-    res.send('social');
+    res.render('social');
 };
 module.exports.workouts = function(req,res){
-    res.send('workouts');
+    res.render('workouts');
 };
