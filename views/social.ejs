@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en-AU">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Social </title>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link rel="stylesheet" href="./styles/social.css">
+        <script type="text/javascript" src="./js/navbar.js"></script>
+        <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li><a href="./home.html">Lifeclock</a></li>
+            <li class="active"><a href="./social.html">Social</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="./workouts.html">Workouts</a>
+                    <a href="./diets.html">Diets</a>
+                    <a href="./health.html">Health</a>
+                </div>
+            </li>
+            <li><a href="./goals.html">Goals</a></li>
+            <li class="right" ><a href="./login.html">Logout</a></li>
+        </ul>
+
+        <h1>Friends</h1>
+        <h1>Feed</h1>
+        <div class="container">
+        <ul class="list">
+            <li class="friend">Trung Nguyen  <button class="button">Modivate</button><button class="delete">Delete</button></li>
+            <li class="friend">Eric Sciberras  <button class="button">Modivate</button><button class="delete">Delete</button></li>
+            <li class="friend">Zachary Voo  <button class="button">Modivate</button><button class="delete">Delete</button></li>
+        </ul>
+        </div>
+        <div class="container">
+            <ul class="list">
+                <li class="friend">Zachary Voo walked 8000 Steps <button class="button">^</button></li>
+                <li class="friend">Doan Nguyen sent a friend request  <button class="button">Accept</button><button class="delete">Delete</button></li>
+                <li class="friend">Trung Nguyen went 30 days without smoking <button class="button">^</button></li>
+                <li class="friend">Eric Sciberras went 7 days without drinking  <button class="button">^</button></li>
+            </ul>
+        </div>
+        <form  class="form">
+
+            <input type="text" placeholder="Enter Username" name="email" class="input" required >
+
+            <button type="submit" class="add">Add Friend</button>
+        </form>
+    </body>
+
+
+</html>

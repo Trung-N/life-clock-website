@@ -1,19 +1,32 @@
-const database = require('../models/db.js');
 const express = require('express');
-const faker = require('faker');
 
-module.exports.comingsoon = function(req,res){
-    res.render('coming');
+module.exports.login = function(req,res){
+    res.render('login');
 };
 
-module.exports.sayBye = function(req,res){
-    res.send('Goodbye');
+module.exports.home = function(req,res){
+    res.send('home');
 };
 
-module.exports.AllUsers = function(req,res){
-    res.send(database);
+module.exports.addnewgoal = function(req,res){
+    res.send('addnewgoal');
 };
 
-module.exports.User = function(req,res){
-    res.render('users', {user : database[req.params.id]});
+module.exports.diets = function(req,res){
+    res.send('diets');
+};
+module.exports.goals = function(req,res){
+    res.send('goals');
+};
+module.exports.health = function(req,res){
+    res.send('health');
+};
+module.exports.signup = function(req,res){
+    res.send('signup');
+};
+module.exports.social = function(req,res){
+    res.send('social');
+};
+module.exports.workouts = function(req,res){
+    res.send('workouts');
 };

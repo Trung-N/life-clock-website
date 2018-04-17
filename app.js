@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
-app.use(express.static('comingsoon'));
+app.use(express.static('lifeclock'));
 
 const router = require('./routes/routes.js');
 app.use(router);
