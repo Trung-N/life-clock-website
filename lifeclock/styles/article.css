@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Concert+One|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Concert+One');
 
 body{
     background-image: url('../images/6272.jpg');
     background-color: white;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     margin: 0;
 }
 
@@ -16,19 +16,7 @@ html{
     color: black;
 }
 
-.articleone {
-  text-align: left;
-  padding-left: 60px;
-  overflow: auto;
-}
-
-.articletwo {
-  text-align: left;
-  padding-left: 60px;
-  overflow: auto;
-}
-
-.articlethree {
+.article {
   text-align: left;
   padding-left: 60px;
   overflow: auto;
@@ -47,7 +35,7 @@ a{
 }
 
 h1{
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Bowlby One SC', cursive;
   font-size: 60px;
 }
 
