@@ -1,4 +1,6 @@
-  var calories = new RadialProgressChart('.calories', {
+/* demo code from http://pablomolnar.github.io/radial-progress-chart/  */
+
+var calories = new RadialProgressChart('.calories', {
     diameter: 200,
     max: 800,
     round: true,
