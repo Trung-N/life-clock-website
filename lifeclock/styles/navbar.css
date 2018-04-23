@@ -5,7 +5,6 @@ body{
     background-color: rgb(144,195,149);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: fille; 
     margin: 0;
 }
 
@@ -46,7 +45,7 @@ html{
 }
 
 .navbar .active{
-    background-color: darkblue; /*colour for page you are on */
+    background-color: #1e88e5; /*colour for page you are on */
 }
 
 /* Dropdown menu in navbar */
