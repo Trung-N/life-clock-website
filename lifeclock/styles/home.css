@@ -64,11 +64,13 @@ select{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-grow: 1;
 }
 
-.flex-container > div {
-  width: 500px;
+.flex-container > .flex-element {
+  width: 300px;
   text-align: center;
+  justify-content: center;
 }
 
 .list{

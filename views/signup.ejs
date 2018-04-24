@@ -8,12 +8,12 @@
 
   <h1>Sign Up</h1>
 
-  <div class="logo">
-    <img src="./images/logo.png" alt="Logo" class="logo">
-  </div>
   <div class="details">
-    Enter your details into the fields.
-  </div>
+      Enter your details into the fields.
+    </div>
+
+  <div class="flex-container">
+    <div class="flex-element">
   <form action="./home.html" method="post" class="form">
     <p>Name</p>
     <input type="text" name="Name" class="input" required>
@@ -23,6 +23,8 @@
     <input type="password" name="password" class="input" required>
     <p>Repeat Password</p>
     <input type="password" name="rptpassword" class="input" required>
+    </div>
+    <div class="flex-element">
     <p>Age</p>
     <input type="number" name="age" class="input" required>
     <p>Exercise</p>
@@ -46,6 +48,8 @@
       <option value="1">Relatively Healthy</option>
       <option value="2">Unhealthy</option>
     </select>
+    </div>
+    <div class="flex-element">
     <p>Sleep</p>
     <select>
       <option disabled selected value>Sleep Frequency</option>
@@ -305,6 +309,8 @@
     <br>
     <button type="submit" class="button" onclick ="location.href='/home';">DONE</button>
   </form>
+</div>
+</div>
   <br>
 </body>
 </html>
