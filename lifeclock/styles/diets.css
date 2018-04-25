@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Concert+One|Permanent+Marker');
 
 body{
-    background-image: url('../images/veggie.jpg');
-    background-color: white;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    margin: 0;
+
 }
 
 html{

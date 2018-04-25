@@ -18,12 +18,16 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in an element with id="timer"
-  document.getElementById("timer").innerHTML = years + "y " + days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("years").innerHTML = years;
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "Your Still Here...";
+    document.getElementById("demo").innerHTML = "You're Still Here...";
   }
 }, 1000);
