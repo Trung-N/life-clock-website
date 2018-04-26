@@ -1,18 +1,12 @@
 var mongoose = require('mongoose');
-  var Schema = mongoose.Schema;
 
-  var userSchema = new Schema({
-    name: String,
-    email: String,
-    password: String, //maybe there is a more secure way to do this
-    age: Number,
-    exercise: Number, // or string
-    smoking: Number,
-    alcohol: Number,
-    country: String,
-    friends: [{ body: String, date: Date }],
-    goals: [{ name: String, goalProgess: Number, date: Date }],
-    posts: [{ body: String, date: Date }],
-  });
+mongoose.connect('mongodb://team-tam:9r2ysvlm@ds259079.mlab.com:59079/team-tam)',function(err){
+	if(!err){
+		console.log("connected to mongo");
+	}
+	else{
+		console.log("failed to connect");
+	}
+});
 
-
+require('./user.js');

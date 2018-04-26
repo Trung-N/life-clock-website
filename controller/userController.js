@@ -1,4 +1,6 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const User = mongoose.model('users');
 
 module.exports.login = function(req,res){
     res.render('login');
@@ -29,4 +31,26 @@ module.exports.social = function(req,res){
 };
 module.exports.workouts = function(req,res){
     res.render('workouts');
+};
+
+module.exports.createUser = function(req,res){
+	var user = new User({
+		"name":req.body.name,
+		"email":req.body.email,
+		"age":req.body.age,
+		"exercise":req.body.exercise,
+		"smoking":req.body.smoking,
+		"diet":req.body.diet,
+		"sleep":req.body.sleep,
+		"alcohol":req.body.alcohol,
+		"country":req.body.country
+	});
+	user.save(function(err,newUser){
+		if(!err){
+			res.send(newUser);
+		}
+		else{
+			res.sendStatus(404);
+		}
+	});
 };
