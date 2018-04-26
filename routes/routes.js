@@ -12,6 +12,8 @@ router.get('/health',controller.health);
 router.get('/signup',controller.signup);
 router.get('/social',controller.social);
 router.get('/workouts',controller.workouts);
+router.post('/createUser', controller.createUser);
+
 
 
 module.exports = router;
