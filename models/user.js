@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
-    "name": String,
+     _id:String,
+    "fullName": String,
     "email": String,
-    "password": String, //maybe there is a more secure way to do this
+    "password": String,
     "age": Number,
     "exercise": String,
     "smoking": String,
@@ -15,4 +16,4 @@ var userSchema = mongoose.Schema({
     "posts": [{ body: String, date: Date }]
   });
 
-mongoose.model('users', userSchema);
+mongoose.model('users',userSchema);

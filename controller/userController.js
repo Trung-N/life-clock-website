@@ -35,7 +35,7 @@ module.exports.workouts = function(req,res){
 
 module.exports.createUser = function(req,res){
 	var user = new User({
-		"name":req.body.name,
+		"fullName":req.body.fullName,
 		"email":req.body.email,
 		"age":req.body.age,
 		"exercise":req.body.exercise,
@@ -50,7 +50,7 @@ module.exports.createUser = function(req,res){
 			res.send(newUser);
 		}
 		else{
-			res.sendStatus(404);
+			res.sendStatus(400);
 		}
 	});
 };
