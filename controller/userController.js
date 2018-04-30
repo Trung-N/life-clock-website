@@ -43,7 +43,7 @@ module.exports.createUser = function(req,res){
 		"diet":req.body.diet,
 		"sleep":req.body.sleep,
 		"alcohol":req.body.alcohol,
-		"country":req.body.country
+        "country":req.body.country
 	});
 	user.save(function(err,newUser){
 		if(!err){
