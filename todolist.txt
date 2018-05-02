@@ -1,0 +1,26 @@
+1.Perisistant login
+2.clock: 
+     - pull data from database and convert to time
+3.goals:
+    -add new goals to database
+    -update progess on database
+    -when finished push to feeds
+    -generate goals on load
+4.social feed: 
+    -pulls friend list
+    -pull feed
+    -pull requests
+    -add and delete friends
+    -like posts
+    -add motivate feature
+    -send friend requests
+5.profile page: 
+    -upload profile pic
+    -pull current data
+    -update data
+6.make elements popout more 
+7.change fonts
+8.fix workout page
+
+to think about
+?? add lifeclock page without login ??

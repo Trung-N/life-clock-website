@@ -8,12 +8,11 @@ router.get('/home',controller.home);
 router.get('/addnewgoal',controller.addnewgoal);
 router.get('/diets',controller.diets);
 router.get('/goals',controller.goals);
+router.get('/updategoal',controller.updategoal);
 router.get('/health',controller.health);
 router.get('/signup',controller.signup);
 router.get('/social',controller.social);
 router.get('/workouts',controller.workouts);
 router.post('/createUser', controller.createUser);
-
-
 
 module.exports = router;

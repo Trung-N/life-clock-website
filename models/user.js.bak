@@ -2,16 +2,6 @@ const mongoose = require('mongoose');
 var userSchema = mongoose.Schema({
   "fullName": String,
   "email": String,
-  "password": String
-});
-
-mongoose.model('users',userSchema);
-
-
-/* the schema we want to implement
-var userSchema = mongoose.Schema({
-  "fullName": String,
-  "email": String,
   "password": String,
   "dateOfBirth": Date,
   "exercise": [{behaviour: Number, startDate: Date}],
@@ -25,4 +15,6 @@ var userSchema = mongoose.Schema({
   "personalFeed": [{ body: String, date: Date }],
   "friendFeed": [{ body: String, date: Date }],
   "pendingFriends": [{id: String, dateOfRequest: Date }]
-});*/
+});
+
+mongoose.model('users',userSchema);
