@@ -3,7 +3,8 @@ var bcrypt   = require('bcrypt-nodejs');
 var userSchema = mongoose.Schema({
   "fullName": String,
   "email": String,
-  "password": String
+  "password": String,
+  "goals": [{ "name": String, "goalProgress": Number, "target": Number}]
 });
 
 mongoose.model('user',userSchema);
@@ -22,7 +23,7 @@ var userSchema = mongoose.Schema({
   "alcohol": [{behaviour: Number, startDate: Date}],
   "country": String,
   "friends": [{id:String}],
-  "goals": [{ name: String, goalProgess: Number, target: Number, type: String , dateStarted: Date, dateCompleted: Date }],
+
   "personalFeed": [{ body: String, date: Date }],
   "friendFeed": [{ body: String, date: Date }],
   "pendingFriends": [{id: String, dateOfRequest: Date }]

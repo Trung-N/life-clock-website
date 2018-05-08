@@ -30,14 +30,51 @@
 
 
         <div class="container">
-            <a href="/updategoals"><div class="steps"></div></a>
-            <a href="/updategoals"><div class="calories"></div></a>
+            <div class="a chart"></div>
+            <div class="b chart"></div>
+            <div class="c chart"></div>
+            <div class="d chart"></div>
+            <div class="e chart"></div>
+            <div class="f chart"></div>
         </div>
         
         <button class="button" onclick="location.href='/addnewgoal';">Add New Goal</button>
         
          
-        <script src="./js/radialring.js"></script>
+        <script>
+
+            var chart = [".a",".b",".c"];
+
+            <% for(var i=0; i< user.goals.length; i++) {%>
+                var text =  "<%=user.goals[i].name%>" + " of " +  "<%=user.goals[i].target%>" ;
+                new RadialProgressChart(".a", {
+                    diameter: 200,
+                    max:<%=user.goals[i].target%>,
+                    round: true,
+                    series: [
+                        {
+                            labelStart: '\uF105',
+                            value: <%=user.goals[i].goalProgress%>,
+                            color: {
+                                linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%', spreadMethod: 'pad' },
+                                stops: [
+                                    {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
+                                    {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
+                                ]}
+                        }
+                    ],
+                    center: {
+                        content: [function (value) {
+                            return value
+                        }, text],
+                        y: 25
+                    }
+                });
+
+            <% }; %>
+
+
+        </script>
 
 </body>
 
