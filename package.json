@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/eric-sciberras/info30005-2018-sw#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.9",
     "express": "^4.16.3",

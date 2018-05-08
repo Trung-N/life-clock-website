@@ -1,38 +1,43 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser =  require('cookie-parser');
-//const exphbs = require('express-handlebars');
-const expressValidator = require('express-validator');
-//const flash = require('connect-flash');
-const session = require('express-session');
+// set up ======================================================================
+// get all the tools we need
+var express  = require('express');
+var app      = express();
+var port     = process.env.PORT || 3000;
+var mongoose = require('mongoose');
 var passport = require('passport');
-var Strategy = require('passport-local').Strategy;
+var flash    = require('connect-flash');
 
+var morgan       = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var session      = require('express-session');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(cookieParser());
-
-app.use(require('morgan')('combined'));
-
-app.use(session({
-    secret: 'secret', //change this to some long string
-    saveUninitialized: true,
-    resave: true
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-require('./models/db.js');
-
-app.set('view engine', 'ejs');
 app.use(express.static('lifeclock'));
 
-const router = require('./routes/routes.js');
-app.use(router);
+var configDB = require('./models/db.js');
 
-app.listen(PORT, function(){ console.log(`Express listening on port ${PORT}`); });
+// configuration ===============================================================
+mongoose.connect(configDB.url); // connect to our database
+require('./models/user.js');
+
+require('./models/passport.js')(passport); // pass passport for configuration
+
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser()); // get information from html forms
+
+app.set('view engine', 'ejs'); // set up ejs for templating
+
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
+// routes ======================================================================
+require('./routes/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
+// launch ======================================================================
+app.listen(port);
+console.log('Express listening on port ' + port);
