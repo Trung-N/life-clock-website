@@ -16,19 +16,9 @@ module.exports = function(app, passport) {
     app.get('/signup',controller.signup);
     app.get('/social',controller.social);
     app.get('/workouts',controller.workouts);
+    app.post('/login',controller.postlogin);
+    app.post('/signup',controller.postsignup);
     app.get('/logintest',controller.logintest);
-    app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/logintest', // redirect to the secure profile section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    }));
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    }));
-
-
 };
 
 // route middleware to make sure a user is logged in
