@@ -18,6 +18,7 @@ module.exports = function(app, passport) {
     app.get('/workouts',controller.workouts);
     app.post('/login',controller.postlogin);
     app.post('/signup',controller.postsignup);
+    app.post('/addgoal',controller.addgoal);
     app.get('/logintest',controller.logintest);
 };
 
