@@ -21,7 +21,7 @@ module.exports.diets = function(req,res){
     res.render('diets');
 };
 module.exports.goals = function(req,res){
-    res.render('goals');
+    res.render('goals',{user: req.user});
 };
 module.exports.health = function(req,res){
     res.render('health');
