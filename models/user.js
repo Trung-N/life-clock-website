@@ -5,7 +5,7 @@ var userSchema = mongoose.Schema({
   "password": String
 });
 
-mongoose.model('users',userSchema);
+mongoose.model('user',userSchema);
 
 
 /* the schema we want to implement
@@ -26,3 +26,8 @@ var userSchema = mongoose.Schema({
   "friendFeed": [{ body: String, date: Date }],
   "pendingFriends": [{id: String, dateOfRequest: Date }]
 });*/
+
+module.exports.getUserByUsername = function(email,callback) {
+    var wuery = {email:email};
+    User.findOne(query,callback);
+}

@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const User = mongoose.model('users');
+const passport = require('passport');
+const Strategy = require('passport-local').Strategy;
+const User = mongoose.model('user');
 const router = require('../routes/routes.js');
 
 module.exports.login = function(req,res){
@@ -55,3 +57,34 @@ module.exports.createUser = function(req,res){
 		}
 	});
 };
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+
+passport.use(new Strategy(
+    {
+        usernameField: 'email'
+    },
+    function(email, password, done) {
+        console.log('username, password: ', username, password);
+        User.findOne({ email: email }, function (err, user) {
+            if (err) { return done(err); }
+            if (!user) { return done(null, false); }
+            if (!user.verifyPassword(password)) { return done(null, false); }
+            return done(null, user);
+        });
+    }
+));
+
+module.exports.authenticate =(
+    passport.authenticate('local', { failureRedirect: '/login'}),
+    function(req, res) {
+        res.redirect('/');
+    });

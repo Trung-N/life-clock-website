@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const controller = require('../controller/userController.js');
 
 router.get('/',controller.login);
@@ -14,5 +16,6 @@ router.get('/signup',controller.signup);
 router.get('/social',controller.social);
 router.get('/workouts',controller.workouts);
 router.post('/createUser', controller.createUser);
+router.post('/login',controller.authenticate);
 
 module.exports = router;
