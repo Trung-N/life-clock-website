@@ -16,8 +16,9 @@ module.exports = function(app, passport) {
     app.get('/signup',controller.signup);
     app.get('/social',controller.social);
     app.get('/workouts',controller.workouts);
+    app.get('/logintest',controller.logintest);
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/home', // redirect to the secure profile section
+        successRedirect : '/logintest', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
