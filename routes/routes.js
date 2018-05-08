@@ -19,6 +19,12 @@ module.exports = function(app, passport) {
     app.post('/login',controller.postlogin);
     app.post('/signup',controller.postsignup);
     app.post('/addgoal',controller.addgoal);
+    app.post('/acceptfriend',controller.acceptfriend);
+    app.post('/rejectfriend',controller.rejectfriend);
+    app.post('/sendrequest',controller.sendrequest);
+    app.post('/deletefriend',controller.deletefriend);
+    app.post('/likepost',controller.likepost);
+    app.post('/motivate',controller.motivate);
     app.get('/logintest',controller.logintest);
 };
 

@@ -37,19 +37,47 @@
         <h1>Feed</h1>
         <div class="container">
         <ul class="list">
-            <li class="friend">Trung Nguyen  <button class="button">Motivate</button><button class="delete">Delete</button></li>
-            <li class="friend">Eric Sciberras  <button class="button">Motivate</button><button class="delete">Delete</button></li>
-            <li class="friend">Zachary Voo  <button class="button">Motivate</button><button class="delete">Delete</button></li>
+
+            <% for(var i=0; i< user.pendingFriends.length; i++) {%>
+            <li class="friend">
+                <form action="/acceptfriend" method="post">
+                    <%=user.pendingFriends[i].fullName %>
+                    <a><button name ="accept" value="<%=user.pendingFriends[i].email %>" type="submit">Accept</button></a>
+                    <form action="/rejectfriend" method="post">
+                        <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete">Reject</button></a>
+                    </form>
+                </form>
+            </li>
+            <% }; %>
+
+            <% for(var i=0; i< user.friends.length; i++) {%>
+            <li class="friend">
+                <form action="/motivate" method="post">
+                    <%=user.friends[i].fullName %>
+                    <button name ="motivate" value="<%=user.friends[i].email %>" type="submit">Motivate</button>
+                    <form action="/delete" method="post">
+                        <button name ="delete" value="<%=user.friends[i].email %>" type="submit"class="delete">Delete</button>
+                    </form>
+                </form>
+            </li>
+            <% }; %>
+
         </ul>
         </div>
         <div class="container">
             <ul class="list">
-                <li class="friend">Zachary Voo walked 8000 Steps <button class="like" onclick="togglelike(this)"><i class="fas fa-heart"></i></button></li>
-                <li class="friend">Trung Nguyen went 30 days without smoking <button class="like"><i class="fas fa-heart"></i></button></li>
-                <li class="friend">Eric Sciberras went 7 days without drinking  <button class="like"><i class="fas fa-heart"></i></button></li>
+                <% for(var i=0; i< user.friendFeed.length; i++) {%>
+                <li class="friend">
+                    <form action="/likepost" method="post">
+                        <%=user.friendFeed[i].fullName %>
+                        <button class="like" value="<%=user.friends[i].email %>"><i class="fas fa-heart"></i></button>
+
+                    </form>
+                </li>
+                <% }; %>
             </ul>
         </div>
-        <form  class="form">
+        <form action="/sendrequest"  class="form" id="friendRequest">
 
             <input type="text" placeholder="Enter Username" name="email" class="input" required >
 

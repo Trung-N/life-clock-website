@@ -4,7 +4,11 @@ var userSchema = mongoose.Schema({
   "fullName": String,
   "email": String,
   "password": String,
-  "goals": [{ "name": String, "goalProgress": Number, "target": Number}]
+  "goals": [{ "name": String, "goalProgress": Number, "target": Number}],
+    "friends": [{"email": String, "fullName": String}],
+    "pendingFriends": [{"email": String, "fullName": String}],
+    "personalFeed": [{ "body": String, "date": Date, "email": String}],
+    "friendFeed": [{ "body": String, "date": Date, "email": String}],
 });
 
 mongoose.model('user',userSchema);
