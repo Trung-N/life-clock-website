@@ -9,6 +9,7 @@
         <title> Social </title>
         <link rel="stylesheet" href="./styles/navbar.css">
         <link rel="stylesheet" href="./styles/social.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
         <script type="text/javascript" src="./js/navbar.js"></script>
         <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
     </head>
@@ -43,10 +44,9 @@
         </div>
         <div class="container">
             <ul class="list">
-                <li class="friend">Zachary Voo walked 8000 Steps <button class="button">^</button></li>
-                <li class="friend">Doan Nguyen sent a friend request  <button class="button">Accept</button><button class="delete">Delete</button></li>
-                <li class="friend">Trung Nguyen went 30 days without smoking <button class="button">^</button></li>
-                <li class="friend">Eric Sciberras went 7 days without drinking  <button class="button">^</button></li>
+                <li class="friend">Zachary Voo walked 8000 Steps <button class="like" onclick="togglelike(this)"><i class="fas fa-heart"></i></button></li>
+                <li class="friend">Trung Nguyen went 30 days without smoking <button class="like"><i class="fas fa-heart"></i></button></li>
+                <li class="friend">Eric Sciberras went 7 days without drinking  <button class="like"><i class="fas fa-heart"></i></button></li>
             </ul>
         </div>
         <form  class="form">
