@@ -44,8 +44,26 @@ module.exports.logintest = function(req,res){
     res.render('logintest', {user : req.user});
 };
 
+module.exports.addgoal = function(req,res){
+    var goaldetails = {
+        "name":req.name,
+        "target":req.body.target,
+        "goalProgress":0 };
+    console.log("here");
+    User.findOneAndUpdate(
+        { _id: req.body.id },
+        { $push: { goal: goaldetails  } },
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success);
+            }
+        });
+};
+
 module.exports.postlogin = passport.authenticate('local-login', {
-    successRedirect : '/logintest', // redirect to the secure profile section
+    successRedirect : '/home', // redirect to the secure profile section
     failureRedirect : '/login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
 });

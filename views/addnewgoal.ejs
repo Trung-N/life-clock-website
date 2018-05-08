@@ -37,27 +37,17 @@
   <div class="details">
     Enter your details into the fields.
   </div>
-  <form action="./home.html" method="post" class="form">
-    <p>Name of Goal</p>
-    <input type="text" name="Name" class="input" required>
+  <form action="./addgoal" method="post" class="form">
     <p>Goal Type</p>
-    <select>
+    <select name="name">
       <option disabled selected value>Goal Type</option>
-      <option value="0">Steps</option>
-      <option value="1">Sleep</option>
-      <option value="2">Calories</option>
-      <option value="3">Days without smoking</option>
-      <option value="4">Days without drinking</option>
+      <option value="Steps">Steps</option>
+      <option value="Calories">Calories</option>
+      <option value="Days">Days without smoking</option>
+      <option value="Days">Days without drinking</option>
     </select>
-     <p>Value</p>
-    <input type="text" name="Name" class="input" required>
-    <select>
-      <option disabled selected value>Units</option>
-      <option value="0">Days</option>
-      <option value="1">Hours</option>
-      <option value="2">Calories</option>
-      <option value="3">Steps</option>
-    </select>
+     <p>Target</p>
+      <input type="text" placeholder="Enter Target " name="target" class="input" required >
     <br>
     <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
   </form>
