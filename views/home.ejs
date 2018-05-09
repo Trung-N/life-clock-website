@@ -102,11 +102,11 @@
     </div>
 </div>
         <p>
-            <%=user%>;
+            <%=user.age%>
         </p>
 <script>
         // Set the date we're counting down to
-        var userYear = 70 - user.age;
+        var userYear = 70 - <%=user.age%>;
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth();
