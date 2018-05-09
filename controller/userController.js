@@ -44,23 +44,39 @@ module.exports.logintest = function(req,res){
     res.render('logintest', {user : req.user});
 };
 
-module.exports.addgoal = function(req,res){
-    var goaldetails = {
-        "name":req.name,
-        "target":req.body.target,
-        "goalProgress":0 };
-    console.log("here");
-    User.findOneAndUpdate(
-        { _id: req.body.id },
-        { $push: { goal: goaldetails  } },
-        function (error, success) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log(success);
+module.exports.updategoalprogress = function(req,res){
+
+    User.findOne({ 'id' :  req.body.accept }, function(err, user) {
+            
+            var goaldetails = {
+                "goalProgress":req.body.progress };
             }
+            req.user.goals.push(goaldetails);
+            req.user.save();
+            res.redirect('/goals');
         });
-};
+    }
+
+module.exports.addgoal = function(req,res){
+
+    User.findOne({ 'id' :  req.body.accept }, function(err, user) {
+        // if there are any errors, return the error
+        if (err)
+            return console.log(err);
+
+        if (user) {
+            
+            var goaldetails = {
+                "name":req.body.name,
+                "target":req.body.target,
+                "goalProgress":0 };
+            }
+
+            req.user.goals.push(goaldetails);
+            req.user.save();
+            res.redirect('/goals');
+        });
+    }
 
 module.exports.acceptfriend = function(req,res){
     User.findOne({ 'email' :  req.body.accept }, function(err, user) {
