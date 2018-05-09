@@ -62,7 +62,7 @@ module.exports.addgoal = function(req,res){
             req.user.save();
             res.redirect('/goals');
         });
-    }
+    };
 
 module.exports.acceptfriend = function(req,res){
     User.findOne({ 'email' :  req.body.accept }, function(err, user) {
@@ -202,6 +202,6 @@ module.exports.postlogin = passport.authenticate('local-login', {
 
 module.exports.postsignup = passport.authenticate('local-signup', {
     successRedirect : '/login', // redirect to the secure profile section
-    failureRedirect : '/login-test', // redirect back to the signup page if there is an error
+    failureRedirect : '/signup', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
 });
