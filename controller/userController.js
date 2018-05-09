@@ -201,7 +201,7 @@ module.exports.postlogin = passport.authenticate('local-login', {
 });
 
 module.exports.postsignup = passport.authenticate('local-signup', {
-    successRedirect : '/login-test', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if there is an error
+    successRedirect : '/login', // redirect to the secure profile section
+    failureRedirect : '/login-test', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
 });
