@@ -43,19 +43,6 @@ module.exports.logintest = function(req,res){
     res.render('logintest', {user : req.user});
 };
 
-module.exports.updategoalprogress = function(req,res){
-
-    User.findOne({ 'id' :  req.body.accept }, function(err, user) {
-            
-            var goaldetails = {
-                "goalProgress":req.body.progress };
-            }
-            req.user.goals.push(goaldetails);
-            req.user.save();
-            res.redirect('/goals');
-        });
-    }
-
 module.exports.addgoal = function(req,res){
 
     User.findOne({ 'id' :  req.body.accept }, function(err, user) {
