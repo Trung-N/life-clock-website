@@ -41,24 +41,26 @@
             <% for(var i=0; i< user.pendingFriends.length; i++) {%>
             <li class="friend">
                 <form action="/acceptfriend" method="post">
-                    <%=user.pendingFriends[i].fullName %>
                     <a><button name ="accept" value="<%=user.pendingFriends[i].email %>" type="submit">Accept</button></a>
-                    <form action="/rejectfriend" method="post">
-                        <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete">Reject</button></a>
-                    </form>
                 </form>
+                <form action="/rejectfriend" method="post">
+                    <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete">Reject</button></a>
+                </form>
+                <%=user.pendingFriends[i].fullName %>
             </li>
             <% }; %>
+
 
             <% for(var i=0; i< user.friends.length; i++) {%>
             <li class="friend">
                 <form action="/motivate" method="post">
-                    <%=user.friends[i].fullName %>
                     <button name ="motivate" value="<%=user.friends[i].email %>" type="submit">Motivate</button>
-                    <form action="/delete" method="post">
-                        <button name ="delete" value="<%=user.friends[i].email %>" type="submit"class="delete">Delete</button>
-                    </form>
+
                 </form>
+                <form action="/deletefriend" method="post">
+                    <button name ="delete" value="<%=user.friends[i].email %>" type="submit"class="delete">Delete</button>
+                </form>
+                <%=user.friends[i].fullName %>
             </li>
             <% }; %>
 
@@ -69,15 +71,16 @@
                 <% for(var i=0; i< user.friendFeed.length; i++) {%>
                 <li class="friend">
                     <form action="/likepost" method="post">
-                        <%=user.friendFeed[i].fullName %>
-                        <button class="like" value="<%=user.friends[i].email %>"><i class="fas fa-heart"></i></button>
+                        <%=user.friendFeed[i].body %>
+                        <%=user.friendFeed[i].date %>
+                        <button class="like" value=><i class="fas fa-heart"></i></button>
 
                     </form>
                 </li>
                 <% }; %>
             </ul>
         </div>
-        <form action="/sendrequest"  class="form" id="friendRequest">
+        <form action="/sendrequest"  method="post" class="form" id="friendRequest">
 
             <input type="text" placeholder="Enter Username" name="email" class="input" required >
 

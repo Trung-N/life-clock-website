@@ -66,107 +66,118 @@ module.exports.acceptfriend = function(req,res){
     User.findOne({ 'email' :  req.body.accept }, function(err, user) {
         // if there are any errors, return the error
         if (err)
-            return done(err);
+            return console.log(err);
 
         if (user) {
             var frienddetails = {
                 "email":req.body.accept,
-                "name":user.fullName
+                "fullName":user.fullName
             };
+
 
             var mydetails = {
                 "email":req.user.email,
-                "name":req.user.fullName
+                "fullName":req.user.fullName
             };
 
             req.user.friends.push(frienddetails);
             user.friends.push(mydetails);
-            req.user.pendingFriends.find({'email':req.body.accept}).remove(callback);
+            for(var i = 0;i<req.user.pendingFriends.length;i++){
+                if(req.user.pendingFriends[i].email==req.body.accept){
+                    req.user.pendingFriends[i].remove();
+                }
 
-        } else {
-            return done(null, false, req.flash('acceptMessage', "That email doesn't exsist."));
+            }
+            user.save();
+            req.user.save();
+            res.redirect('/social');
+
         }
 
     });
 };
 
 module.exports.rejectfriend = function(req,res){
-    req.user.pendingFriends.find({'email':req.body.delete}).remove(callback);
+
+    for(var i = 0;i<req.user.pendingFriends.length;i++){
+        if(req.user.pendingFriends[i].email==req.body.delete){
+            req.user.pendingFriends[i].remove();
+        }
+
+    }
+    req.user.save();
+    res.redirect('/social');
 };
 
 module.exports.sendrequest = function(req,res){
     User.findOne({ 'email' :  req.body.email }, function(err, user) {
         // if there are any errors, return the error
         if (err)
-            return done(err);
+            return console.log(err);
 
         if (user) {
             var mydetails = {
                 "email":req.user.email,
-                "name":req.user.fullName
+                "fullName":req.user.fullName
             };
             user.pendingFriends.push(mydetails);
-
-        } else {
-            return done(null, false, req.flash('acceptMessage', "That email doesn't exsist."));
+            user.save();
         }
 
     });
+    res.redirect('/social');
 };
 
 module.exports.deletefriend = function(req,res){
+    for(var i = 0;i<req.user.friends.length;i++){
+        if(req.user.friends[i].email==req.body.delete){
+            req.user.friends[i].remove();
+        }
+
+    }
+
     User.findOne({ 'email' :  req.body.delete }, function(err, user) {
         // if there are any errors, return the error
         if (err)
-            return done(err);
+            return console.log(err);
 
-        if (user) {
-            var frienddetails = {
-                "email":req.body.delete,
-                "name":user.fullName
-            };
-
-            var mydetails = {
-                "email":req.user.email,
-                "name":req.user.fullName
-            };
-
-            req.user.friends.push(frienddetails);
-            user.friends.push(mydetails);
-            req.user.pendingFriends.find({'email':req.body.delete}).remove(callback);
-
-        } else {
-            return done(null, false, req.flash('acceptMessage', "That email doesn't exsist."));
+        for(var i = 0;i<user.friends.length;i++){
+            if(user.friends[i].email==req.user.email){
+                user.friends[i].remove();
+            }
         }
-
+        user.save();
     });
+
+    req.user.save();
+    res.redirect('/social');
 };
 
 module.exports.motivate = function(req,res){
-    User.findOne({ 'email' :  req.body.accept }, function(err, user) {
+    User.findOne({ 'email' :  req.body.motivate }, function(err, user) {
         // if there are any errors, return the error
         if (err)
-            return done(err);
+            return console.log(err);
 
         if (user) {
             var post= {
-                "body": req.user.fullName.concat(" sends motivations."),
+                "body": req.user.fullName.concat(" liked your post."),
                 "date": new Date()
-            }
-            user.personalFeed.push(post);
-
-        } else {
-            return done(null, false, req.flash('acceptMessage', "That email doesn't exsist."));
+            };
+            console.log(post);
+            user.friendFeed.push(post);
+            user.save();
         }
 
     });
+    res.redirect('/social');
 };
 
 module.exports.likepost = function(req,res){
     User.findOne({ 'email' :  req.body.accept }, function(err, user) {
         // if there are any errors, return the error
         if (err)
-            return done(err);
+            return console.log(err);
 
         if (user) {
             var post= {
@@ -174,9 +185,8 @@ module.exports.likepost = function(req,res){
             "date": new Date()
         }
             user.personalFeed.push(post);
+            user.save();
 
-        } else {
-            return done(null, false, req.flash('acceptMessage', "That email doesn't exsist."));
         }
 
     });
