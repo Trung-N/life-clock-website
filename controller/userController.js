@@ -9,10 +9,6 @@ module.exports.login = function(req,res){
     res.render('login');
 };
 
-module.exports.home = function(req,res){
-    res.render('home');
-};
-
 module.exports.addnewgoal = function(req,res){
     res.render('addnewgoal');
 };
@@ -22,6 +18,9 @@ module.exports.diets = function(req,res){
 };
 module.exports.goals = function(req,res){
     res.render('goals',{user: req.user});
+};
+module.exports.home = function(req,res){
+    res.render('home', {user: req.user});
 };
 module.exports.health = function(req,res){
     res.render('health');
