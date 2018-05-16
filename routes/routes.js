@@ -11,11 +11,11 @@ module.exports = function(app, passport) {
     app.get('/addnewgoal',controller.addnewgoal);
     app.get('/diets',controller.diets);
     app.get('/goals',controller.goals);
-    app.get('/updategoal',controller.updategoal);
     app.get('/health',controller.health);
     app.get('/signup',controller.signup);
     app.get('/social',controller.social);
     app.get('/workouts',controller.workouts);
+    app.post('/updategoal',controller.updategoal);
     app.post('/login',controller.postlogin);
     app.post('/signup',controller.postsignup);
     app.post('/addgoal',controller.addgoal);
