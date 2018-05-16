@@ -62,7 +62,7 @@ module.exports.addgoal = function(req,res){
             req.user.save();
             res.redirect('/goals');
         });
-    }
+    };
 
 module.exports.acceptfriend = function(req,res){
     User.findOne({ 'email' :  req.body.accept }, function(err, user) {
