@@ -59,15 +59,16 @@
     
     <div class="flex-container">
     <div class="flex-element"> 
+    <form action="/updatehabits" method="post" class="form">
     <p>Exercise</p>
-    <select>
+    <select name="excercise" >
       <option disabled selected value>Exercise Frequency</option>
       <option value="2">Never</option>
       <option value="1">1-2 times a week</option>
       <option value="0">3+ times a week</option>
     </select>
     <p>Smoking</p>
-    <select>
+    <select name="smoking">
       <option disabled selected value>Smoking Frequency</option>
       <option value="0">Never</option>
       <option value="1">A pack every few weeks</option>
@@ -89,22 +90,21 @@
       <option value="1">Less than 8 hours a day</option>
     </select>
     <p>Alchohol</p>
-    <select>
+    <select name="alcohol">
       <option disabled selected value>Drink frequency</option>
       <option value="0">Never</option>
       <option value="1">Once a week</option>
       <option value="2">Multiple times in a week</option>
     </select>
     <br>
-    <button type="submit" class="button" onclick ="location.href='./home';">Test</button>
-    <button type="submit" class="button" onclick ="location.href='./home';">Reset</button>
     <button type="submit" class="button" onclick ="location.href='./home';">Update</button>
     </div>
+  </form>
 </div>
 <script>
         // Set the date we're counting down to
 
-        var userYear = 70 - <%=user.age%>  - <%=user.smoking%> - <%=user.sleep%>;
+        var userYear = 70 - <%=user.age%>  - <%=user.smoking%> - <%=user.sleep%> - <%=user.alcohol%>;
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth();

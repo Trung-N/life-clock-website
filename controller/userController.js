@@ -22,6 +22,19 @@ module.exports.goals = function(req,res){
 module.exports.home = function(req,res){
     res.render('home', {user: req.user});
 };
+
+module.exports.updatehabits = function(req,res){
+    const user = Object.assign(req.body);
+    User.findOneAndUpdate({ _id: req.user._id }, 
+         user, {upsert: true },function(err, response) {
+        if (err) {
+            return console.log(err);
+       } else {
+            res.redirect('/home');
+       }
+    });
+};
+
 module.exports.health = function(req,res){
     res.render('health');
 };

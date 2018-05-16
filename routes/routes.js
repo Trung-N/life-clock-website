@@ -15,6 +15,7 @@ module.exports = function(app, passport) {
     app.get('/signup',controller.signup);
     app.get('/social',controller.social);
     app.get('/workouts',controller.workouts);
+    app.post('/updatehabits',controller.updatehabits);
     app.post('/updategoal',controller.updategoal);
     app.post('/login',controller.postlogin);
     app.post('/signup',controller.postsignup);
