@@ -62,16 +62,16 @@
     <p>Exercise</p>
     <select>
       <option disabled selected value>Exercise Frequency</option>
-      <option value="0">Never</option>
+      <option value="2">Never</option>
       <option value="1">1-2 times a week</option>
-      <option value="2">3+ times a week</option>
+      <option value="0">3+ times a week</option>
     </select>
     <p>Smoking</p>
     <select>
       <option disabled selected value>Smoking Frequency</option>
-      <option value="2">Never</option>
+      <option value="0">Never</option>
       <option value="1">A pack every few weeks</option>
-      <option value="3">A pack or more a week</option>
+      <option value="2">A pack or more a week</option>
     </select>
     <p>Diet</p>
     <select>
@@ -103,7 +103,8 @@
 </div>
 <script>
         // Set the date we're counting down to
-        var userYear = 70 - <%=user.age%>;
+
+        var userYear = 70 - <%=user.age%>  - <%=user.smoking%> - <%=user.exercise%> - <%=user.sleep%> - <%=user.alchohol%> - <%=user.diet%>;
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth();
