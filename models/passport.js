@@ -63,11 +63,10 @@ module.exports = function(passport) {
                         newUser.password = newUser.generateHash(password);
                         newUser.fullName = req.body.fullName;
                         newUser.age = req.body.age;
-                        newUser.exercise = req.body.exercise;
                         newUser.smoking = req.body.smoking;
                         newUser.diet = req.body.diet;
                         newUser.sleep = req.body.sleep;
-                        newUser.alchohol = req.body.alchoholohol;
+                        newUser.alcohol = req.body.alcohol;
                         newUser.height = req.body.height;
                         newUser.weight = req.body.weight;
 
