@@ -6,11 +6,11 @@
       text-align: center;
     }
 
-    .container div {
-      display: inline-block;
-      padding: 20px;
-      width: 20vw;
-    }
+    //.container div {
+    //  display: inline-block;
+    //  padding: 20px;
+    //  width: 10vw;
+    //}
 
     .rbc-label-start {
       font-family: fontawesome;
@@ -23,31 +23,23 @@
       fill: white;
     }
 
-    .calories .rbc-center-text-line0 {
+    .chart .rbc-center-text-line0 {
       font-size: 95px;
     }
 
-    .calories .rbc-center-text-line1 {
-      font-size: 20px;
-    }
-
-.chart .rbc-center-text-line0 {
-    font-size: 95px;
-}
-
-.chart .rbc-center-text-line1 {
+  .chart .rbc-center-text-line1 {
     font-size: 20px;
-}
+  }
 
-    .steps .rbc-center-text-line0 {
-      font-size: 80px;
-    }
+  .steps .rbc-center-text-line0 {
+    font-size: 80px;
+  }
 
-    .steps .rbc-center-text-line1 {
-      font-size: 20px;
-    }
+  .steps .rbc-center-text-line1 {
+    font-size: 20px;
+  }
 
-.button{
+/* .button{
   background-color: #DAA520; /* Gold */
   border: none;
   border-radius: 12px;
@@ -60,4 +52,4 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-}
+} */

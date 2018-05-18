@@ -61,6 +61,21 @@ module.exports.updategoal = function(req,res){
     });
 };
 
+module.exports.removegoal = function(req,res){
+    //console.log(req.body.id);
+    //db.people.update({ _id: req.user._id }, {'$pop': {"interests": 1}})
+    User.findByIdAndUpdate(
+        { _id: req.user._id }, { $pop: { "goals": (req.body.id - 1) } }, { safe: true, upsert: true },
+        function(err, user) {
+            if (err)
+                return console.log(err);
+            if(user){
+                res.redirect('/goals');
+            };
+        });
+};
+
+
 module.exports.logintest = function(req,res){
     res.render('logintest', {user : req.user});
 };

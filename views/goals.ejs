@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/navbar.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
     <script src="./js/index.js"></script>
-    <script type="text/javascript" src="./js/navbar.js"></script> 
+    <script type="text/javascript" src="./js/navbar.js"></script>
 </head>
     <body>
 
@@ -30,7 +30,10 @@
         </ul>
 
         <div class="flex-container">
-            <div onclick="document.getElementById('update00').style.display='block'" class="flex-element a chart"></div>
+            <div class="flex-element">
+            <div onclick="document.getElementById('update00').style.display='block'" class="a chart"></div>
+                <div id=".a"></div>
+            </div>
                 <!-- The Modal -->
                 <div id="update00" class="modal">
                     <!-- Modal content -->
@@ -43,19 +46,28 @@
                                  <p>Current Progress</p>
                                   <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
                                 <br>
-                                <input type="hidden" value="0" name='goal'>
+                                <input type="hidden" value="0" name='id'>
                                 <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
                               </form>
-                              <br>   
+                              <form action="/removegoal" method="post" class="form">
+                                <input type="hidden" value="0" name='id'>
+                                <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                              </form>
+                              <br>
                     </div>
                 </div>
-            <div onclick="document.getElementById('update01').style.display='block'" class="flex-element b chart"></div>
+
+            <!--   -->
+            <div class="flex-element">
+            <div onclick="document.getElementById('update01').style.display='block'" class="b chart"></div>
+                <div id=".b"></div>
+            </div>
                 <!-- The Modal -->
                 <div id="update01" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span onclick="document.getElementById('update01').style.display='none'" class="close">&times;</span>
-                            <div class="details">
+                            <div class="button">
                                     Update Goal
                                   </div>
                                   <form action="/updategoal" method="post" class="form">
@@ -65,10 +77,17 @@
                                     <input type="hidden" value="1" name='goal'>
                                     <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
                                   </form>
-                                  <br>   
+                                  <form action="/removegoal" method="post" class="form">
+                                    <input type="hidden" value="1" name='id'>
+                                    <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                                  </form>
+                                  <br>
                         </div>
-                    </div>                       
-            <div onclick="document.getElementById('update02').style.display='block'" class="flex-element c chart"></div>
+                    </div>
+            <div class="flex-element">
+            <div onclick="document.getElementById('update02').style.display='block'" class="c chart"></div>
+                <div id=".c"></div>
+            </div>
                 <!-- The Modal -->
                 <div id="update02" class="modal">
                         <!-- Modal content -->
@@ -84,10 +103,17 @@
                                     <input type="hidden" value="2" name='goal'>
                                     <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
                                   </form>
-                                  <br>   
+                                  <form action="/removegoal" method="post" class="form">
+                                    <input type="hidden" value="2" name='id'>
+                                    <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                                  </form>
+                                  <br>
                         </div>
                     </div>
-            <div onclick="document.getElementById('update03').style.display='block'" class="flex-element d chart"></div>
+            <div class="flex-element">
+            <div onclick="document.getElementById('update03').style.display='block'" class="d chart"></div>
+          </div>
+                <div id=".d"></div>
                 <!-- The Modal -->
                 <div id="update03" class="modal">
                         <!-- Modal content -->
@@ -103,10 +129,17 @@
                                     <input type="hidden" value="3" name='goal'>
                                     <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
                                   </form>
-                                  <br>   
+                                  <form action="/removegoal" method="post" class="form">
+                                    <input type="hidden" value="3" name='id'>
+                                    <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                                  </form>
+                                  <br>
                         </div>
                     </div>
-            <div onclick="document.getElementById('update04').style.display='block'" class="flex-element e chart"></div>
+            <div class="flex-element">
+            <div onclick="document.getElementById('update04').style.display='block'" class="e chart"></div>
+                <div id=".e"></div>
+              </div>
                 <!-- The Modal -->
                 <div id="update04" class="modal">
                         <!-- Modal content -->
@@ -122,16 +155,23 @@
                                     <input type="hidden" value="4" name='goal'>
                                     <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
                                   </form>
-                                  <br>   
+                                  <form action="/removegoal" method="post" class="form">
+                                    <input type="hidden" value="4" name='id'>
+                                    <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                                  </form>
+                                  <br>
                         </div>
                     </div>
-            <div onclick="document.getElementById('update05').style.display='block'" class="flex-element f chart"></div>
+            <div class="flex-element">
+            <div onclick="document.getElementById('update05').style.display='block'" class="f chart"></div>
+          </div>
+                <div id=".f"></div>
                 <!-- The Modal -->
                 <div id="update05" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span onclick="document.getElementById('update05').style.display='none'" class="close">&times;</span>
-                            <div class="details">
+                            <div class="button">
                                     Update Goal
                                   </div>
                                   <form action="/updategoal" method="post" class="form">
@@ -141,13 +181,17 @@
                                     <input type="hidden" value="5" name='goal'>
                                     <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
                                   </form>
-                                  <br>   
+                                  <form action="/removegoal" method="post" class="form">
+                                    <input type="hidden" value="5" name='id'>
+                                    <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                                  </form>
+                                  <br>
                         </div>
                     </div>
         </div>
 
 
- <button  class="button fas fa-plus" onclick="document.getElementById('newGoal').style.display='block'" ></button>
+ <button  class="button" onclick="document.getElementById('newGoal').style.display='block'" > Add New Goal</button>
 
  <!-- Add new Goal-->
  <!-- The Modal -->
@@ -164,22 +208,48 @@
                   <option disabled selected value>Goal Type</option>
                   <option value="Steps">Steps</option>
                   <option value="Calories">Calories</option>
-                  <option value="Days">Days without smoking</option>
-                  <option value="Days">Days without drinking</option>
+                  <option value="Smoking">Days without smoking</option>
+                  <option value="Drinking">Days without drinking</option>
                 </select>
-                 <p>Current Progress</p>
-                  <input type="text" placeholder="Enter Progress " name="target" class="input" required >
+                 <p>Goal</p>
+                  <input type="text" placeholder="Enter Goal" name="target" class="input" required >
                 <br>
                 <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
               </form>
-              <br>   
+              <form action="./deletegoal" method="post" class="form">
+                 <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+             </form>
+              <br>
    </div>
- </div> 
+ </div>
         <script>
             var chart = [".a", ".b", ".c", ".d", ".e", ".f"];
             var j=0
             <% for(var i=0; i< user.goals.length; i++) {%>
-                var text =  "<%=user.goals[i].name%>" + " of " +  "<%=user.goals[i].target%>" ;
+                
+                var text;  
+                switch("<%=user.goals[i].name%>") {
+                  case "Calories":
+                    text = "Calories"
+                    break;
+                  case "Steps":
+                    text = "Steps"
+                    break;
+                  case "Smoking":
+                    text = "Days"
+                    break;
+                  case "Drinking":
+                    text = "Days"
+                    break;
+                  default:
+                    text = "goal"
+                }
+                text += " of " +  "<%=user.goals[i].target%>";
+
+
+                document.getElementById(chart[j]).innerHTML = name;
+
+                
                 new RadialProgressChart(chart[j], {
                     diameter: 200,
                     max:<%=user.goals[i].target%>,
@@ -203,6 +273,24 @@
                         y: 25
                     }
                 });
+                var name;
+                switch("<%=user.goals[i].name%>") {
+                  case "Calories":
+                    name = "Calorie Intake"
+                    break;
+                  case "Steps":
+                    name = "Steps Taken"
+                    break;
+                  case "Smoking":
+                    name = "Days Without Smoking"
+                    break;
+                  case "Drinking":
+                    name = "Days Without Drinking"
+                    break;
+                  default:
+                    name = "goal"
+                }
+                document.getElementById(chart[j]).innerHTML = name;
                 j=j+1;
             <% }; %>
         </script>
