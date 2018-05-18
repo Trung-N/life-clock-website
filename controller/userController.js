@@ -49,12 +49,12 @@ module.exports.workouts = function(req,res){
 };
 
 module.exports.updategoal = function(req,res){
-    User.findOne({ 'id' :  req.body.accept }, function(err, user) {
+    User.findOne({_id: req.user._id}, function(err, user) {
         // if there are any errors, return the error
         if (err)
             return console.log(err);
         if (user) {
-            req.user.goals[req.body.goal].goalProgress=req.body.progress;
+            req.user.goals[req.body.id].goalProgress=req.body.progress;
             req.user.save();
             res.redirect('/goals');
         };
