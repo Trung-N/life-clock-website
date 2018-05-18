@@ -21,11 +21,12 @@ html{
 h1 {
     font-family: 'Sigmar One', cursive;
     font-size: 48pt;
+    line-height: 30pt;
 }
 
 p {
     font-family: 'Do Hyeon', sans-serif;
-    font-size: 12pt;
+    font-size: 14pt;
 }
 
 .logo{
