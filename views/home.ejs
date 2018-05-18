@@ -31,7 +31,6 @@
             <li><a href="/goals">Goals</a></li>
             <li class="right" ><a href="/login">Logout</a></li>
         </ul>
-
         <div class="container">
         <div class="timer">
             <div>
@@ -56,7 +55,7 @@
             </div>
         </div>
         </div>
-    
+        <p>Have a great day <%=user.fullName%>!</p>
     <div class="flex-container">
     <div class="flex-element"> 
     <form action="/updatehabits" method="post" class="form">
@@ -84,7 +83,7 @@
     </div>
     <div class="flex-element">
     <p>Sleep</p>
-    <select>
+    <select name="sleep">
       <option disabled selected value>Sleep Frequency</option>
       <option value="0">8+ hours a day</option>
       <option value="1">Less than 8 hours a day</option>

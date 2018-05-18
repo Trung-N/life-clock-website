@@ -8,12 +8,13 @@ html{
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 18px;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 .article {
   display grid;
   overflow: auto;
+    color:black;
 }
 
 img{
@@ -27,7 +28,7 @@ img{
 a{
   text-decoration: none;
 }
-a:link, a:visited{
+.article a:link, .article a:visited{
     color:black;
 }
 
