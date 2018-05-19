@@ -200,7 +200,7 @@ module.exports.motivate = function(req,res){
 
         if (user) {
             var post= {
-                "body": req.user.fullName.concat(" liked your post."),
+                "body": req.user.fullName.concat(" Sent motivation."),
                 "date": new Date()
             };
             console.log(post);
