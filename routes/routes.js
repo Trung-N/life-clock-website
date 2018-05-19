@@ -27,7 +27,6 @@ module.exports = function(app, passport) {
     app.post('/deletefriend',controller.deletefriend);
     app.post('/likepost',controller.likepost);
     app.post('/motivate',controller.motivate);
-    app.get('/logintest',controller.logintest);
 };
 
 // route middleware to make sure a user is logged in
