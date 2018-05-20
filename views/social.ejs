@@ -46,7 +46,7 @@
                 <form action="/rejectfriend" method="post">
                     <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete">Reject</button></a>
                 </form>
-                <%=user.pendingFriends[i].fullName %>
+                Friend Request from - <%=user.pendingFriends[i].fullName %>
             </li>
             <% }; %>
 
@@ -70,12 +70,8 @@
             <ul class="list">
                 <% for(var i=0; i< user.friendFeed.length; i++) {%>
                 <li class="friend">
-                    <form action="/likepost" method="post">
                         <%=user.friendFeed[i].body %>
                         <%=user.friendFeed[i].date %>
-                        <button class="like" value=><i class="fas fa-heart"></i></button>
-
-                    </form>
                 </li>
                 <% }; %>
             </ul>
