@@ -102,12 +102,16 @@
         if(bmi >= 18.5 && bmi < 25) bmival = 0;
         if(bmi >= 25 && bmi < 30) bmival = 3;
         if(bmi >= 30) bmival = 10;
-        var userYear = 82 - <%=user.age%>  - <%=user.smoking%> - <%=user.sleep%> - <%=user.alcohol%> - bmival;
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth();
         var day = d.getDate();
-        var countDownDate = new Date(year + userYear , month, day);
+
+        var userYear = 82 - <%=user.smoking%> - <%=user.sleep%> - <%=user.alcohol%> - bmival - (year - <%=user.date.getFullYear()%>);
+
+
+
+        var countDownDate = new Date(year + userYear , month +<%=user.date.getMonth()%>, day + <%=user.date.getDate()%>);
 
         // Update the count down every 1 second
         var x = setInterval(function() {
@@ -143,7 +147,6 @@
         function test() {
             var tweight = document.getElementById("weight").value;
             var theight = document.getElementById("height").value;
-            var tage = <%=user.age%>;
             var tsmoking = document.getElementById("smoking").value;
             var tsleep = document.getElementById("sleep").value;
             var talcohol = document.getElementById("alcohol").value;
@@ -154,7 +157,7 @@
             if(tbmi >= 18.5 && bmi < 25) tbmival = 0;
             if(tbmi >= 25 && bmi < 30) tbmival = 3;
             if(tbmi >= 30) tbmival = 10;
-            var tuserYear = 82 - tage - tsmoking - tsleep - talcohol;
+            var tuserYear = 82 - tsmoking - tsleep - talcohol - (year - <%=user.date.getFullYear()%>) ;
             var dif = tuserYear - userYear;
             if(dif>=0) document.getElementById("test").innerHTML = "Gain "+dif+" years";
             if(dif<0) document.getElementById("test").innerHTML = "Loss "+dif*-1+" years";
