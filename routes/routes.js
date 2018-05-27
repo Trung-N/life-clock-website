@@ -25,7 +25,6 @@ module.exports = function(app, passport) {
     app.post('/rejectfriend',controller.rejectfriend);
     app.post('/sendrequest',controller.sendrequest);
     app.post('/deletefriend',controller.deletefriend);
-    app.post('/likepost',controller.likepost);
     app.post('/motivate',controller.motivate);
 };
 

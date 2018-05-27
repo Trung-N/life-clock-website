@@ -5,24 +5,28 @@ const Strategy = require('passport-local').Strategy;
 const User = mongoose.model('user');
 const router = require('../routes/routes.js');
 
+//renders login page
 module.exports.login = function(req,res){
     res.render('login');
 };
-
+//renders addnewgoal page
 module.exports.addnewgoal = function(req,res){
     res.render('addnewgoal');
 };
-
+//renders diets page
 module.exports.diets = function(req,res){
     res.render('diets');
 };
+//renders goals page
 module.exports.goals = function(req,res){
     res.render('goals',{user: req.user});
 };
+//renders homepage
 module.exports.home = function(req,res){
     res.render('home', {user: req.user});
 };
 
+//updates users habit detail to the database
 module.exports.updatehabits = function(req,res){
     const user = Object.assign(req.body);
     User.findOneAndUpdate({ _id: req.user._id }, 
@@ -35,19 +39,22 @@ module.exports.updatehabits = function(req,res){
     });
 };
 
+//renders health page
 module.exports.health = function(req,res){
     res.render('health');
 };
+//renders signup page
 module.exports.signup = function(req,res){
     res.render('signup');
 };
+//renders social page
 module.exports.social = function(req,res){
     res.render('social',{user: req.user});
 };
 module.exports.workouts = function(req,res){
     res.render('workouts');
 };
-
+//Updates selected goal
 module.exports.updategoal = function(req,res){
     User.findOne({_id: req.user._id}, function(err, user) {
         // if there are any errors, return the error
@@ -61,6 +68,7 @@ module.exports.updategoal = function(req,res){
     });
 };
 
+//Removes goal
 module.exports.removegoal = function(req,res){
     //console.log(req.body.id);
     //db.people.update({ _id: req.user._id }, {'$pop': {"interests": 1}})
@@ -75,11 +83,7 @@ module.exports.removegoal = function(req,res){
         });
 };
 
-
-module.exports.logintest = function(req,res){
-    res.render('logintest', {user : req.user});
-};
-
+//Adds a new goal to user's profile
 module.exports.addgoal = function(req,res){
 
     User.findOne({ 'id' :  req.body.accept }, function(err, user) {
@@ -101,6 +105,7 @@ module.exports.addgoal = function(req,res){
         });
     };
 
+//Adds a friend to user's profile, add self to friend's profile, remove friend request
 module.exports.acceptfriend = function(req,res){
     User.findOne({ 'email' :  req.body.accept }, function(err, user) {
         // if there are any errors, return the error
@@ -136,6 +141,7 @@ module.exports.acceptfriend = function(req,res){
     });
 };
 
+//deletes friend request
 module.exports.rejectfriend = function(req,res){
 
     for(var i = 0;i<req.user.pendingFriends.length;i++){
@@ -148,6 +154,7 @@ module.exports.rejectfriend = function(req,res){
     res.redirect('/social');
 };
 
+//Sends friend request to another user
 module.exports.sendrequest = function(req,res){
     User.findOne({ 'email' :  req.body.email }, function(err, user) {
         // if there are any errors, return the error
@@ -167,6 +174,7 @@ module.exports.sendrequest = function(req,res){
     res.redirect('/social');
 };
 
+//Delete self from friend's friend list, delete friend from friend list
 module.exports.deletefriend = function(req,res){
     for(var i = 0;i<req.user.friends.length;i++){
         if(req.user.friends[i].email==req.body.delete){
@@ -192,6 +200,7 @@ module.exports.deletefriend = function(req,res){
     res.redirect('/social');
 };
 
+//Sends motivation message to friend
 module.exports.motivate = function(req,res){
     User.findOne({ 'email' :  req.body.motivate }, function(err, user) {
         // if there are any errors, return the error
@@ -212,31 +221,14 @@ module.exports.motivate = function(req,res){
     res.redirect('/social');
 };
 
-module.exports.likepost = function(req,res){
-    User.findOne({ 'email' :  req.body.accept }, function(err, user) {
-        // if there are any errors, return the error
-        if (err)
-            return console.log(err);
-
-        if (user) {
-            var post= {
-                "body": req.user.fullName.concat(" liked your post."),
-            "date": new Date()
-        }
-            user.personalFeed.push(post);
-            user.save();
-
-        }
-
-    });
-};
-
+//login in to user account
 module.exports.postlogin = passport.authenticate('local-login', {
     successRedirect : '/home', // redirect to the secure profile section
     failureRedirect : '/login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
 });
 
+//create a user account
 module.exports.postsignup = passport.authenticate('local-signup', {
     successRedirect : '/login', // redirect to the secure profile section
     failureRedirect : '/signup', // redirect back to the signup page if there is an error

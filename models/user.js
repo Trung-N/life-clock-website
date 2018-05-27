@@ -20,31 +20,12 @@ var userSchema = mongoose.Schema({
 
 mongoose.model('user',userSchema);
 
-
-/* the schema we want to implement
-var userSchema = mongoose.Schema({
-  "fullName": String,
-  "email": String,
-  "password": String,
-  "dateOfBirth": Date,
-  "exercise": [{behaviour: Number}],
-  "smoking": [{behaviour: Number}],
-  "diet": [{behaviour: Number}],
-  "sleep": [{behaviour: Number}],
-  "alcohol": [{behaviour: Number}],
-  "country": String,
-  "friends": [{id:String}],
-
-  "personalFeed": [{ body: String, date: Date }],
-  "friendFeed": [{ body: String, date: Date }],
-  "pendingFriends": [{id: String, dateOfRequest: Date }]
-});*/
-
+// Hashes given password
 userSchema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-// checking if password is valid
+// checks if password is valid
 userSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
 };

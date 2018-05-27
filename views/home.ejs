@@ -106,11 +106,7 @@
         var year = d.getFullYear();
         var month = d.getMonth();
         var day = d.getDate();
-
         var userYear = 82 - <%=user.smoking%> - <%=user.sleep%> - <%=user.alcohol%> - bmival - (year - <%=user.date.getFullYear()%>);
-
-
-
         var countDownDate = new Date(year + userYear , month +<%=user.date.getMonth()%>, day + <%=user.date.getDate()%>);
 
         // Update the count down every 1 second
@@ -144,6 +140,7 @@
         }
         }, 1000);
 
+        //Find the amount of years lost/gained from changes made to form
         function test() {
             var tweight = document.getElementById("weight").value;
             var theight = document.getElementById("height").value;
