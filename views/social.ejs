@@ -41,10 +41,10 @@
             <% for(var i=0; i< user.pendingFriends.length; i++) {%>
             <li class="friend">
                 <form action="/acceptfriend" method="post">
-                    <a><button name ="accept" value="<%=user.pendingFriends[i].email %>" type="submit">Accept</button></a>
+                    <a><button name ="accept" value="<%=user.pendingFriends[i].email %>" type="submit" onClick="window.location.reload()">Accept</button></a>
                 </form>
                 <form action="/rejectfriend" method="post">
-                    <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete">Reject</button></a>
+                    <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete" onClick="window.location.reload()">Reject</button></a>
                 </form>
                 Friend Request from - <%=user.pendingFriends[i].fullName %>
             </li>
@@ -58,7 +58,7 @@
 
                 </form>
                 <form action="/deletefriend" method="post">
-                    <button name ="delete" value="<%=user.friends[i].email %>" type="submit"class="delete">Delete</button>
+                    <button name ="delete" value="<%=user.friends[i].email %>" type="submit"class="delete" onClick="window.location.reload()">Delete</button>
                 </form>
                 <%=user.friends[i].fullName %>
             </li>
