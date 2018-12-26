@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+body{
+    background-color:lightblue;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+}
+html{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+}
+
+h1 {
+    font-size: 48pt;
+}
+
+.logo{
+    width:40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.input{
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    background-color: #333;
+    border: none;
+    width: 25%;
+    color: white;
+    padding: 12px 20px;
+    margin: 4px 0;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Bungee Inline', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+@media screen and (max-width: 660px){
+
+	h1 {
+    	font-size: 36pt;
+	}
+
+	.logo{
+    	width:70%;
+	}
+
+	.input{
+    	width: 80%;
+	}
+
+	.button {
+    	width: 80%;
+	}
+}

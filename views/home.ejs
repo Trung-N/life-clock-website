@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en-AU">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Lifeclock </title>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link rel="stylesheet" href="./styles/home.css">
+        <script type="text/javascript" src="./js/navbar.js"></script>
+        <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li class="active" ><a href="/home">Lifeclock</a></li>
+            <li><a href="/social">Social</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="/workouts">Workouts</a>
+                    <a href="/diets">Diets</a>
+                    <a href="/health">Health</a>
+                </div>
+            </li>
+            <li><a href="/goals">Goals</a></li>
+            <li class="right" ><a href="/login">Logout</a></li>
+        </ul>
+        <div class="container">
+        <div class="timer">
+            <div>
+              <span id="years"></span>
+              <div class="smalltext">Years</div>
+            </div>
+            <div>
+              <span id="days"></span>
+              <div class="smalltext">Days</div>
+            </div>
+            <div>
+              <span id="hours"></span>
+              <div class="smalltext">Hours</div>
+            </div>
+            <div>
+              <span id="minutes"></span>
+              <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+              <span id="seconds"></span>
+              <div class="smalltext">Seconds</div>
+            </div>
+        </div>
+        </div>
+        <p id="test">Have a great day <%=user.fullName%>!</p>
+    <div class="flex-container">
+    <div class="flex-element"> 
+    <form action="/updatehabits" method="post" class="form">
+    <p>Smoking</p>
+    <select name="smoking" id="smoking">
+      <option disabled selected value>Smoking Frequency</option>
+      <option value="0"<% if(user.smoking == 0) { %> <%= selected="selected" %> <% } %>>Never</option>
+      <option value="5"<% if(user.smoking == 5) { %> <%= selected="selected" %> <% } %>>A pack every few weeks</option>
+      <option value="10"<% if(user.smoking == 10) { %> <%= selected="selected" %> <% } %>>A pack or more a week</option>
+    </select>
+    <p>Height(cm)</p>
+    <input type="number" name="height" class="input" min="1" id="height" value=<%= user.height %>>
+    <p>Weight(kg)</p>
+    <input type="number" name="weight" class="input" min="1" id="weight" value=<%= user.weight %>>
+    </div>
+    <div class="flex-element">
+    <p>Sleep</p>
+     <select name="sleep" id="sleep">
+      <option disabled selected value>Sleep Frequency</option>
+      <option value="0" <% if(user.sleep == 0) { %> <%= selected="selected" %> <% } %>>6+ hours a day</option>
+      <option value="3" <% if(user.sleep == 3) { %> <%= selected="selected" %> <% } %>>Less than 6 hours a day</option>
+    </select>
+    <p>Alchohol</p>
+    <select name="alcohol" id="alcohol">
+      <option disabled selected value>Drink frequency</option>
+      <option value="0"<% if(user.alcohol == 0) { %> <%= selected="selected" %> <% } %>>Less than 6.5 drinks a week</option>
+      <option value="0.5"<% if(user.alcohol == 0.5) { %> <%= selected="selected" %> <% } %>>6.5 to 12.5 drinks a week</option>
+      <option value="2"<% if(user.alcohol == 2) { %> <%= selected="selected" %> <% } %>>12.5 to 22 drinks a week</option>
+      <option value="5"<% if(user.alcohol == 5) { %> <%= selected="selected" %> <% } %>>More than 22 drinks a week </option>
+    </select>
+    <br>
+    <button type="button" class="button" onclick ="test()">Test</button>
+    <button type="submit" class="button" onclick ="location.href='./home';">Update</button>
+    </div>
+  </form>
+</div>
+<script>
+        // Set the date we're counting down to
+        var weight = <%=user.weight%>;
+        var height = <%=user.height%>;
+        var bmi = weight/((parseFloat(height)/100)*(parseFloat(height)/100));
+        var bmival = 0;
+        if(bmi < 18.5) bmival = 3;
+        if(bmi >= 18.5 && bmi < 25) bmival = 0;
+        if(bmi >= 25 && bmi < 30) bmival = 3;
+        if(bmi >= 30) bmival = 10;
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth();
+        var day = d.getDate();
+        var userYear = 82 - <%=user.smoking%> - <%=user.sleep%> - <%=user.alcohol%> - bmival - (year - <%=user.date.getFullYear()%>);
+        var countDownDate = new Date(year + userYear , month +<%=user.date.getMonth()%>, day + <%=user.date.getDate()%>);
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+        var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in an element with id="timer"
+        document.getElementById("years").innerHTML = years;
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "You're Still Here...";
+        }
+        }, 1000);
+
+        //Find the amount of years lost/gained from changes made to form
+        function test() {
+            var tweight = document.getElementById("weight").value;
+            var theight = document.getElementById("height").value;
+            var tsmoking = document.getElementById("smoking").value;
+            var tsleep = document.getElementById("sleep").value;
+            var talcohol = document.getElementById("alcohol").value;
+
+            var tbmi = tweight/((parseFloat(theight)/100)*(parseFloat(theight)/100));
+            var tbmival = 0;
+            if(tbmi < 18.5) tbmival = 3;
+            if(tbmi >= 18.5 && bmi < 25) tbmival = 0;
+            if(tbmi >= 25 && bmi < 30) tbmival = 3;
+            if(tbmi >= 30) tbmival = 10;
+            var tuserYear = 82 - tsmoking - tsleep - talcohol - (year - <%=user.date.getFullYear()%>) ;
+            var dif = tuserYear - userYear;
+            if(dif>=0) document.getElementById("test").innerHTML = "Gain "+dif+" years";
+            if(dif<0) document.getElementById("test").innerHTML = "Loss "+dif*-1+" years";
+        }
+
+</script>
+    </body>
+
+
+</html>

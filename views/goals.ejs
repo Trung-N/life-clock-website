@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/goals.css">
+    <link rel="stylesheet" href="./styles/radialring.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/navbar.js"></script>
+</head>
+    <body>
+
+       <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li><a href="/home">Lifeclock</a></li>
+            <li><a href="/social">Social</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="/workouts">Workouts</a>
+                    <a href="/diets">Diets</a>
+                    <a href="/health">Health</a>
+                </div>
+            </li>
+            <li class="active" ><a href="/goals">Goals</a></li>
+            <li class="right" ><a href="/login">Logout</a></li>
+        </ul>
+
+        <div class="flex-container">
+
+            <!-- Goal-->
+            <div class="flex-element">
+            <div onclick="document.getElementById('update00').style.display='block'" class="a chart"></div>
+                <div id=".a">
+                </div>
+            </div>
+                <!-- The Modal -->
+            <div id="update00" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span onclick="document.getElementById('update00').style.display='none'" class="close">&times;</span>
+                <div class="details">
+                    Update Goal
+                </div>
+                <form action="/updategoal" method="post" class="form">
+                  <p>Current Progress</p>
+                  <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
+                  <br>
+                  <input type="hidden" value="0" name='id'>
+                  <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+                </form>
+                  <form action="/removegoal" method="post" class="form">
+                    <input type="hidden" value="0" name='id'>
+                      <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                  </form>
+                <br>
+              </div>
+            </div>
+
+            <!-- Goal-->
+            <div class="flex-element">
+                <div onclick="document.getElementById('update01').style.display='block'" class="b chart"></div>
+                    <div id=".b">
+                    </div>
+                </div>
+                    <!-- The Modal -->
+                <div id="update01" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span onclick="document.getElementById('update01').style.display='none'" class="close">&times;</span>
+                    <div class="details">
+                        Update Goal
+                    </div>
+                    <form action="/updategoal" method="post" class="form">
+                      <p>Current Progress</p>
+                      <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
+                      <br>
+                      <input type="hidden" value="1" name='id'>
+                      <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+                    </form>
+                      <form action="/removegoal" method="post" class="form">
+                        <input type="hidden" value="1" name='id'>
+                          <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                      </form>
+                    <br>
+                  </div>
+                </div>
+
+
+            <!-- Goal-->
+            <div class="flex-element">
+                <div onclick="document.getElementById('update02').style.display='block'" class="c chart"></div>
+                    <div id=".c">
+                    </div>
+                </div>
+                    <!-- The Modal -->
+                <div id="update02" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span onclick="document.getElementById('update02').style.display='none'" class="close">&times;</span>
+                    <div class="details">
+                        Update Goal
+                    </div>
+                    <form action="/updategoal" method="post" class="form">
+                      <p>Current Progress</p>
+                      <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
+                      <br>
+                      <input type="hidden" value="2" name='id'>
+                      <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+                    </form>
+                      <form action="/removegoal" method="post" class="form">
+                        <input type="hidden" value="2" name='id'>
+                          <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                      </form>
+                    <br>
+                  </div>
+                </div>
+
+
+            <!-- Goal-->
+            <div class="flex-element">
+                <div onclick="document.getElementById('update03').style.display='block'" class="d chart"></div>
+                    <div id=".d">
+                    </div>
+                </div>
+                    <!-- The Modal -->
+                <div id="update03" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span onclick="document.getElementById('update03').style.display='none'" class="close">&times;</span>
+                    <div class="details">
+                        Update Goal
+                    </div>
+                    <form action="/updategoal" method="post" class="form">
+                      <p>Current Progress</p>
+                      <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
+                      <br>
+                      <input type="hidden" value="3" name='id'>
+                      <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+                    </form>
+                      <form action="/removegoal" method="post" class="form">
+                        <input type="hidden" value="3" name='id'>
+                          <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                      </form>
+                    <br>
+                  </div>
+                </div>
+
+
+
+            <!-- Goal-->
+            <div class="flex-element">
+                <div onclick="document.getElementById('update04').style.display='block'" class="e chart"></div>
+                    <div id=".e">
+                    </div>
+                </div>
+                    <!-- The Modal -->
+                <div id="update04" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span onclick="document.getElementById('update04').style.display='none'" class="close">&times;</span>
+                    <div class="details">
+                        Update Goal
+                    </div>
+                    <form action="/updategoal" method="post" class="form">
+                      <p>Current Progress</p>
+                      <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
+                      <br>
+                      <input type="hidden" value="4" name='id'>
+                      <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+                    </form>
+                      <form action="/removegoal" method="post" class="form">
+                        <input type="hidden" value="4" name='id'>
+                          <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                      </form>
+                    <br>
+                  </div>
+                </div>
+
+
+
+            <!-- Goal-->
+            <div class="flex-element">
+                <div onclick="document.getElementById('update05').style.display='block'" class="f chart"></div>
+                    <div id=".f">
+                    </div>
+                </div>
+                    <!-- The Modal -->
+                <div id="update05" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span onclick="document.getElementById('update05').style.display='none'" class="close">&times;</span>
+                    <div class="details">
+                        Update Goal
+                    </div>
+                    <form action="/updategoal" method="post" class="form">
+                      <p>Current Progress</p>
+                      <input type="text" placeholder="Enter Progress" name="progress" class="input" required >
+                      <br>
+                      <input type="hidden" value="5" name='id'>
+                      <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+                    </form>
+                      <form action="/removegoal" method="post" class="form">
+                        <input type="hidden" value="5" name='id'>
+                          <button type="submit" class="button" onclick ="location.href='/goals';">Delete Goal</button>
+                      </form>
+                    <br>
+                  </div>
+                </div>
+              </div>
+
+ <button  class="button" onclick="document.getElementById('newGoal').style.display='block'" > Add New Goal</button>
+
+ <!-- Add new Goal-->
+ <!-- The Modal -->
+ <div id="newGoal" class="modal">
+   <!-- Modal content -->
+   <div class="modal-content">
+        <span onclick="document.getElementById('newGoal').style.display='none'" class="close">&times;</span>
+        <div class="details">
+                Enter your details into the fields.
+              </div>
+              <form action="./addgoal" method="post" class="form">
+                <p>Goal Type</p>
+                <select name="name">
+                  <option disabled selected value>Goal Type</option>
+                  <option value="Steps">Steps</option>
+                  <option value="Calories">Calories</option>
+                  <option value="Smoking">Days without smoking</option>
+                  <option value="Drinking">Days without alcohol</option>
+                </select>
+                 <p>Goal</p>
+                  <input type="text" placeholder="Enter Goal" name="target" class="input" required >
+                <br>
+                <button type="submit" class="button" onclick ="location.href='/goals';">DONE</button>
+              </form>
+              <br>
+   </div>
+ </div>
+        <script>
+            var chart = [".a", ".b", ".c", ".d", ".e", ".f"];
+            var j=0
+            <% for(var i=0; i< user.goals.length; i++) {%>
+                
+                var text;  
+                switch("<%=user.goals[i].name%>") {
+                  case "Calories":
+                    text = "Calories"
+                    break;
+                  case "Steps":
+                    text = "Steps"
+                    break;
+                  case "Smoking":
+                    text = "Days"
+                    break;
+                  case "Drinking":
+                    text = "Days"
+                    break;
+                  default:
+                    text = "goal"
+                }
+                text += " of " +  "<%=user.goals[i].target%>";
+
+                document.getElementById(chart[j]).innerHTML = name;
+
+                
+                new RadialProgressChart(chart[j], {
+                    diameter: 200,
+                    max:<%=user.goals[i].target%>,
+                    round: true,
+                    series: [
+                        {
+                            labelStart: '\uF105',
+                            value: <%=user.goals[i].goalProgress%>,
+                            color: {
+                                linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%', spreadMethod: 'pad' },
+                                stops: [
+                                    {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
+                                    {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
+                                ]}
+                        }
+                    ],
+                    center: {
+                        content: [function (value) {
+                            return value
+                        }, text],
+                        y: 25
+                    }
+                });
+                var name;
+                switch("<%=user.goals[i].name%>") {
+                  case "Calories":
+                    name = "Calorie Intake"
+                    break;
+                  case "Steps":
+                    name = "Steps Taken"
+                    break;
+                  case "Smoking":
+                    name = "Days Without Smoking"
+                    break;
+                  case "Drinking":
+                    name = "Days Without alcohol"
+                    break;
+                  default:
+                    name = "goal"
+                }
+                document.getElementById(chart[j]).innerHTML = name;
+                j=j+1;
+            <% }; %>
+        </script>
+
+</body>
+
+</html>

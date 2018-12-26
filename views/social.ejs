@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en-AU">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Social </title>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link rel="stylesheet" href="./styles/social.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+        <script type="text/javascript" src="./js/navbar.js"></script>
+        <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li><a href="/home">Lifeclock</a></li>
+            <li class="active"><a href="/social">Social</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="/workouts">Workouts</a>
+                    <a href="/diets">Diets</a>
+                    <a href="/health">Health</a>
+                </div>
+            </li>
+            <li><a href="/goals">Goals</a></li>
+            <li class="right" ><a href="/login">Logout</a></li>
+        </ul>
+
+        <h1>Friends</h1>
+        <h1>Feed</h1>
+        <div class="container">
+        <ul class="list">
+
+            <% for(var i=0; i< user.pendingFriends.length; i++) {%>
+            <li class="friend">
+                <form action="/acceptfriend" method="post">
+                    <a><button name ="accept" value="<%=user.pendingFriends[i].email %>" type="submit" onClick="window.location.reload()">Accept</button></a>
+                </form>
+                <form action="/rejectfriend" method="post">
+                    <a><button name ="delete" value="<%=user.pendingFriends[i].email %>" type="submit"class="delete" onClick="window.location.reload()">Reject</button></a>
+                </form>
+                Friend Request from - <%=user.pendingFriends[i].fullName %>
+            </li>
+            <% }; %>
+
+
+            <% for(var i=0; i< user.friends.length; i++) {%>
+            <li class="friend">
+                <form action="/motivate" method="post">
+                    <button name ="motivate" value="<%=user.friends[i].email %>" type="submit">Motivate</button>
+
+                </form>
+                <form action="/deletefriend" method="post">
+                    <button name ="delete" value="<%=user.friends[i].email %>" type="submit"class="delete" onClick="window.location.reload()">Delete</button>
+                </form>
+                <%=user.friends[i].fullName %>
+            </li>
+            <% }; %>
+
+        </ul>
+        </div>
+        <div class="container">
+            <ul class="list">
+                <% for(var i=0; i< user.friendFeed.length; i++) {%>
+                <li class="friend">
+                        <%=user.friendFeed[i].body %>
+                        <%=user.friendFeed[i].date %>
+                </li>
+                <% }; %>
+            </ul>
+        </div>
+        <form action="/sendrequest"  method="post" class="form" id="friendRequest">
+
+            <input type="text" placeholder="Enter Username" name="email" class="input" required >
+
+            <button type="submit" class="add">Add Friend</button>
+        </form>
+    </body>
+
+
+</html>

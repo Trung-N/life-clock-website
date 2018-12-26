@@ -1,0 +1,11 @@
+{
+	"name":"John",
+	"email":"john@gmail.com",
+	"age":10,
+	"exercise":"none",
+	"smoking":"none",
+	"diet":"none",
+	"sleep":"none",
+	"alcohol":"none",
+	"country":"Australia"
+}

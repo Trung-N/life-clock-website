@@ -1,0 +1,55 @@
+/* demo code from http://pablomolnar.github.io/radial-progress-chart/  */
+
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+    .container {
+      text-align: center;
+    }
+
+    //.container div {
+    //  display: inline-block;
+    //  padding: 20px;
+    //  width: 10vw;
+    //}
+
+    .rbc-label-start {
+      font-family: fontawesome;
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .rbc-center-text {
+      font-family: 'Roboto', 'Myriad Set Pro', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial;
+      fill: white;
+    }
+
+    .chart .rbc-center-text-line0 {
+      font-size: 95px;
+    }
+
+  .chart .rbc-center-text-line1 {
+    font-size: 20px;
+  }
+
+  .steps .rbc-center-text-line0 {
+    font-size: 80px;
+  }
+
+  .steps .rbc-center-text-line1 {
+    font-size: 20px;
+  }
+
+/* .button{
+  background-color: #DAA520; /* Gold */
+  border: none;
+  border-radius: 12px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+} */

@@ -1,9 +1,7 @@
-const faker = require('faker');
+require('./user.js');
+//connects to database
+module.exports = {
 
-var users = [];
+    'url' : 'mongodb://team-tam:xb2gt16y@ds259079.mlab.com:59079/team-tam' // looks like mongodb://<user>:<pass>@mongo.onmodulus.net:27017/Mikha4ot
 
-for(let i=0; i < 10; i++){
-    users[i]={name: faker.name.findName(), email: faker.internet.email()};
-}
-
-module.exports= users;
+};

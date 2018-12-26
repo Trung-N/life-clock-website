@@ -1,13 +1,41 @@
 const express = require('express');
-const router = express.Router();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const controller = require('../controller/userController.js');
 
-router.get('/',controller.comingsoon);
+module.exports = function(app, passport) {
 
-router.get('/bye',controller.sayBye);
+    app.get('/',controller.login);
+    app.get('/login',controller.login);
+    app.get('/home',controller.home);
+    app.get('/addnewgoal',controller.addnewgoal);
+    app.get('/diets',controller.diets);
+    app.get('/goals',controller.goals);
+    app.get('/health',controller.health);
+    app.get('/signup',controller.signup);
+    app.get('/social',controller.social);
+    app.get('/workouts',controller.workouts);
+    app.post('/updatehabits',controller.updatehabits);
+    app.post('/removegoal',controller.removegoal);
+    app.post('/updategoal',controller.updategoal);
+    app.post('/login',controller.postlogin);
+    app.post('/signup',controller.postsignup);
+    app.post('/addgoal',controller.addgoal);
+    app.post('/acceptfriend',controller.acceptfriend);
+    app.post('/rejectfriend',controller.rejectfriend);
+    app.post('/sendrequest',controller.sendrequest);
+    app.post('/deletefriend',controller.deletefriend);
+    app.post('/motivate',controller.motivate);
+};
 
-router.get('/users',controller.AllUsers);
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
 
-router.get ('/users/:id',controller.User);
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
 
-module.exports = router;
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
+

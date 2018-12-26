@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Concert+One');
+
+body{
+
+}
+
+html{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.article {
+  display grid;
+  overflow: auto;
+    color:black;
+}
+
+img{
+    vertical-align:top;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+a{
+  text-decoration: none;
+}
+.article a:link, .article a:visited{
+    color:black;
+}
+
+h1{
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 60px;
+}
+
+div{
+  font-family: 'Concert One', cursive;
+  font-size: 25px;
+}

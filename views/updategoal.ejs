@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en-AU">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Lifeclock </title>
+        <link rel="stylesheet" href="./styles/navbar.css">
+        <link rel="stylesheet" href="./styles/addnewgoal.css">
+        <script type="text/javascript" src="./js/navbar.js"></script>
+        <!-- <link rel="shortcut icon" type="image/png" href="./img/favicon.png"/> -->
+    </head>
+
+    <body>
+
+        <!-- Navigation Bar -->
+        <ul class="navbar" id="navbar">
+            <a style="font-size:15px;" class="icon" onclick="ExpandMobileMenu()">&#9776;</a>
+            <li><a href="/home">Lifeclock</a></li>
+            <li><a href="/social">Social</a></li>
+            <li class="dropdown">
+                <a class="dropbtn" onclick=ExpandSubMenu()>Articles</a>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="/workouts">Workouts</a>
+                    <a href="/diets">Diets</a>
+                    <a href="/health">Health</a>
+                </div>
+            </li>
+            <li class="active"><a href="/goals">Goals</a></li>
+            <li class="right" ><a href="/login">Logout</a></li>
+        </ul>
+
+        <h1>Update Goal</h1>
+
+  <div class="details">
+    Enter your details into the fields.
+  </div>
+  <form action="./updategoal" method="post" class="form">
+     <p>Value</p>
+    <input type="text" name="Name" class="input" required>
+    <br>
+      <input  type="submit" value="Update" class="button"> </input>
+  </form>
+  <br>        
+  </body>
+</html>
